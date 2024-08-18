@@ -1,19 +1,20 @@
 # mlpac
 ## Combining Supervised Learning and Reinforcement Learning for Multi-Label Classification Tasks with Partial Labels
 
-Abstract: Traditional supervised learning heavily relies on human-annotated datasets, especially in data-hungry neural approaches. However, various tasks, especially multi-label tasks like document-level relation extraction, pose challenges in fully manual annotation due to the specific domain knowledge and large class sets. Therefore, we address the multi-label positive unlabelled learning (MLPUL) problem, where only a subset of positive classes is annotated. We propose Mixture Learner for Partially Annotated Classification (MLPAC), an RL-based framework combining the exploration ability of reinforcement learning and the exploitation ability of supervised learning. Experimental results across various tasks, including document-level relation extraction, multi-label image classification, and binary PU learning, demonstrate the generalization and effectiveness of our framework.
+# Abstract
+Traditional supervised learning heavily relies on human-annotated datasets, especially in data-hungry neural approaches. However, various tasks, especially multi-label tasks like document-level relation extraction, pose challenges in fully manual annotation due to the specific domain knowledge and large class sets. Therefore, we address the multi-label positive unlabelled learning (MLPUL) problem, where only a subset of positive classes is annotated. We propose Mixture Learner for Partially Annotated Classification (MLPAC), an RL-based framework combining the exploration ability of reinforcement learning and the exploitation ability of supervised learning. Experimental results across various tasks, including document-level relation extraction, multi-label image classification, and binary PU learning, demonstrate the generalization and effectiveness of our framework.
 
 ![Images](./img/overview.jpg "Trainig process")
 
 
-For MS-COCO datatset
+# For MS-COCO datatset
 
 the data path as following:
 
 ./coco/train2014
 ./coco/val2014
 
-Training code:
+# Training code
 two-stage training, warm up the base model, load the warmed params and train by RL
 change the 'data' to your data path, 'simulate_partial_param' is the ratio of unlabeled positive samples, please change the wandb info. 'best_epoch' specify the warm-up model to load.
 
@@ -33,7 +34,7 @@ python3 train.py \
         --lr=2e-4 \
         --weight_decay=1e-5
 
-RL Train 
+RL Train:
 python3 train.py \
         --data='./coco/'
         --simulate_partial_type=rps \
@@ -45,7 +46,7 @@ python3 train.py \
         --stage=3 \
         --tunning_mode=pseudo_0.8_0.5_
 
-Citation:
+# Citation:
 @inproceedings{jia2024combining,
   title={Combining Supervised Learning and Reinforcement Learning for Multi-Label Classification Tasks with Partial Labels},
   author={Jia, Zixia and Li, Junpeng and Zhang, Shichuan and Liu, Anji and Zheng, Zilong},
@@ -54,6 +55,6 @@ Citation:
   year={2024}
 }
 
-Acknowledgements
+# Acknowledgements
 Some components of this code implementation are adapted from the repository https://github.com/Alibaba-MIIL/PartialLabelingCSL
 
