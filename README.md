@@ -1,4 +1,3 @@
-# mlpac
 # Combining Supervised Learning and Reinforcement Learning for Multi-Label Classification Tasks with Partial Labels
 
 ## Abstract
