@@ -1,0 +1,1404 @@
+wandb: Currently logged in as: zhangshichuan. Use `wandb login --relogin` to force relogin
+wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: | Waiting for wandb.init()...wandb: wandb version 0.15.11 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.15.0
+wandb: Run data is saved locally in /scratch/nlp/jiazixia/rl_enhanced/PartialLabelingCSL-zsc/wandb/run-20230928_003722-42e2x1cn
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run train__lrsd_rpneg_base_bce_posWeight0.6
+wandb: ⭐️ View project at https://wandb.ai/zhangshichuan/base_bce_posWeight
+wandb: 🚀 View run at https://wandb.ai/zhangshichuan/base_bce_posWeight/runs/42e2x1cn
+creating model...
+done
+
+loading annotations into memory...
+Done (t=4.42s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=10.19s)
+creating index...
+index created!
+len(val_dataset)):  40137
+len(train_dataset)):  82081
+Original stat: [0.55035879 0.02786272 0.10484765 0.0297511  0.02732667 0.034003
+ 0.03001913 0.05264312 0.02556012 0.03524567]
+Simulate coco. Mode: rps. Param: 0.600000
+Simulated stat: [0.21873515 0.01061147 0.04166616 0.01180541 0.01103788]
+Used parameters:
+Image_size: 448
+Learning_rate: 0.0002
+Epochs: 30
+Prior file was found in given path.
+Prior file was loaded successfully. 
+Epoch [0/30], Step [000/1283], LR 8.0e-06, Loss: 7068.0
+Epoch [0/30], Step [100/1283], LR 8.1e-06, Loss: 6632.9
+Epoch [0/30], Step [200/1283], LR 8.3e-06, Loss: 5792.1
+Epoch [0/30], Step [300/1283], LR 8.7e-06, Loss: 5122.7
+Epoch [0/30], Step [400/1283], LR 9.3e-06, Loss: 5288.0
+Epoch [0/30], Step [500/1283], LR 1.0e-05, Loss: 4342.0
+Epoch [0/30], Step [600/1283], LR 1.1e-05, Loss: 3838.4
+Epoch [0/30], Step [700/1283], LR 1.2e-05, Loss: 3743.2
+Epoch [0/30], Step [800/1283], LR 1.3e-05, Loss: 3308.4
+Epoch [0/30], Step [900/1283], LR 1.4e-05, Loss: 3220.0
+Epoch [0/30], Step [1000/1283], LR 1.6e-05, Loss: 3256.9
+Epoch [0/30], Step [1100/1283], LR 1.8e-05, Loss: 3002.5
+Epoch [0/30], Step [1200/1283], LR 1.9e-05, Loss: 3348.4
+starting validation
+/scratch/jiazixia/.conda/envs/docre_clone/lib/python3.8/site-packages/torch/optim/lr_scheduler.py:131: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  warnings.warn("Detected call of `lr_scheduler.step()` before `optimizer.step()`. "
+mAP score regular 57.67, mAP score EMA 17.74
+F1 score regular 37.73, Precision regular 23.76, Recall regular 91.51, F1 score EMA 17.04, Precision EMA 9.57, Recall EMA77.31
+best model Saving successfully.
+current_F1 = 37.73, highest_F1 = 37.73
+
+Prior (train), first 5 classes: tensor([0.8524, 0.3651, 0.5947, 0.3359, 0.2809], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'handbag' 'bottle' 'dining table' 'cup' 'bench'
+ 'backpack' 'truck']
+Epoch [1/30], Step [000/1283], LR 2.1e-05, Loss: 2987.5
+Epoch [1/30], Step [100/1283], LR 2.3e-05, Loss: 3160.5
+Epoch [1/30], Step [200/1283], LR 2.5e-05, Loss: 2380.7
+Epoch [1/30], Step [300/1283], LR 2.7e-05, Loss: 2655.4
+Epoch [1/30], Step [400/1283], LR 3.0e-05, Loss: 2367.0
+Epoch [1/30], Step [500/1283], LR 3.2e-05, Loss: 2549.0
+Epoch [1/30], Step [600/1283], LR 3.5e-05, Loss: 2342.8
+Epoch [1/30], Step [700/1283], LR 3.8e-05, Loss: 2375.1
+Epoch [1/30], Step [800/1283], LR 4.1e-05, Loss: 2563.2
+Epoch [1/30], Step [900/1283], LR 4.4e-05, Loss: 2193.8
+Epoch [1/30], Step [1000/1283], LR 4.7e-05, Loss: 2945.2
+Epoch [1/30], Step [1100/1283], LR 5.0e-05, Loss: 2074.0
+Epoch [1/30], Step [1200/1283], LR 5.3e-05, Loss: 2540.1
+starting validation
+mAP score regular 69.04, mAP score EMA 52.60
+F1 score regular 46.92, Precision regular 31.36, Recall regular 93.11, F1 score EMA 36.23, Precision EMA 22.78, Recall EMA88.45
+best model Saving successfully.
+current_F1 = 46.92, highest_F1 = 46.92
+
+Prior (train), first 5 classes: tensor([0.8579, 0.2887, 0.5123, 0.2459, 0.1858], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'handbag' 'bottle' 'bench' 'backpack'
+ 'dining table' 'cup' 'cell phone']
+Epoch [2/30], Step [000/1283], LR 5.6e-05, Loss: 2951.8
+Epoch [2/30], Step [100/1283], LR 5.9e-05, Loss: 2037.5
+Epoch [2/30], Step [200/1283], LR 6.3e-05, Loss: 1992.5
+Epoch [2/30], Step [300/1283], LR 6.7e-05, Loss: 2254.2
+Epoch [2/30], Step [400/1283], LR 7.0e-05, Loss: 2658.0
+Epoch [2/30], Step [500/1283], LR 7.4e-05, Loss: 2306.4
+Epoch [2/30], Step [600/1283], LR 7.8e-05, Loss: 1984.8
+Epoch [2/30], Step [700/1283], LR 8.1e-05, Loss: 2043.2
+Epoch [2/30], Step [800/1283], LR 8.5e-05, Loss: 1939.4
+Epoch [2/30], Step [900/1283], LR 8.9e-05, Loss: 2849.1
+Epoch [2/30], Step [1000/1283], LR 9.3e-05, Loss: 2260.9
+Epoch [2/30], Step [1100/1283], LR 9.7e-05, Loss: 1913.9
+Epoch [2/30], Step [1200/1283], LR 1.0e-04, Loss: 2134.9
+starting validation
+mAP score regular 73.44, mAP score EMA 66.36
+F1 score regular 49.48, Precision regular 33.57, Recall regular 94.06, F1 score EMA 44.11, Precision EMA 29.01, Recall EMA91.99
+best model Saving successfully.
+current_F1 = 49.48, highest_F1 = 49.48
+
+Prior (train), first 5 classes: tensor([0.8418, 0.2509, 0.4643, 0.2059, 0.1465], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'handbag' 'bottle' 'bench' 'backpack'
+ 'dining table' 'cup' 'cell phone']
+Epoch [3/30], Step [000/1283], LR 1.0e-04, Loss: 1965.9
+Epoch [3/30], Step [100/1283], LR 1.1e-04, Loss: 2112.8
+Epoch [3/30], Step [200/1283], LR 1.1e-04, Loss: 1645.4
+Epoch [3/30], Step [300/1283], LR 1.2e-04, Loss: 1903.2
+Epoch [3/30], Step [400/1283], LR 1.2e-04, Loss: 1976.6
+Epoch [3/30], Step [500/1283], LR 1.2e-04, Loss: 1935.0
+Epoch [3/30], Step [600/1283], LR 1.3e-04, Loss: 1696.5
+Epoch [3/30], Step [700/1283], LR 1.3e-04, Loss: 2143.1
+Epoch [3/30], Step [800/1283], LR 1.3e-04, Loss: 1931.8
+Epoch [3/30], Step [900/1283], LR 1.4e-04, Loss: 2046.1
+Epoch [3/30], Step [1000/1283], LR 1.4e-04, Loss: 2606.9
+Epoch [3/30], Step [1100/1283], LR 1.5e-04, Loss: 2340.0
+Epoch [3/30], Step [1200/1283], LR 1.5e-04, Loss: 1985.2
+starting validation
+mAP score regular 74.86, mAP score EMA 72.52
+F1 score regular 52.89, Precision regular 36.92, Recall regular 93.22, F1 score EMA 47.81, Precision EMA 32.12, Recall EMA93.49
+best model Saving successfully.
+current_F1 = 52.89, highest_F1 = 52.89
+
+Prior (train), first 5 classes: tensor([0.8274, 0.2294, 0.4335, 0.1830, 0.1258], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'handbag' 'bottle' 'backpack' 'bench' 'cup'
+ 'dining table' 'cell phone']
+Epoch [4/30], Step [000/1283], LR 1.5e-04, Loss: 1864.9
+Epoch [4/30], Step [100/1283], LR 1.6e-04, Loss: 2240.4
+Epoch [4/30], Step [200/1283], LR 1.6e-04, Loss: 1833.7
+Epoch [4/30], Step [300/1283], LR 1.6e-04, Loss: 1754.0
+Epoch [4/30], Step [400/1283], LR 1.6e-04, Loss: 1535.6
+Epoch [4/30], Step [500/1283], LR 1.7e-04, Loss: 1968.6
+Epoch [4/30], Step [600/1283], LR 1.7e-04, Loss: 1839.7
+Epoch [4/30], Step [700/1283], LR 1.7e-04, Loss: 1906.9
+Epoch [4/30], Step [800/1283], LR 1.8e-04, Loss: 1787.6
+Epoch [4/30], Step [900/1283], LR 1.8e-04, Loss: 1965.1
+Epoch [4/30], Step [1000/1283], LR 1.8e-04, Loss: 1703.0
+Epoch [4/30], Step [1100/1283], LR 1.8e-04, Loss: 2310.3
+Epoch [4/30], Step [1200/1283], LR 1.9e-04, Loss: 2203.4
+starting validation
+mAP score regular 75.32, mAP score EMA 76.09
+F1 score regular 50.80, Precision regular 34.80, Recall regular 94.02, F1 score EMA 50.59, Precision EMA 34.58, Recall EMA94.20
+current_F1 = 50.80, highest_F1 = 52.89
+
+Prior (train), first 5 classes: tensor([0.8173, 0.2128, 0.4122, 0.1681, 0.1124], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'handbag' 'bottle' 'backpack' 'cup' 'dining table'
+ 'bench' 'cell phone']
+Epoch [5/30], Step [000/1283], LR 1.9e-04, Loss: 1846.8
+Epoch [5/30], Step [100/1283], LR 1.9e-04, Loss: 1906.8
+Epoch [5/30], Step [200/1283], LR 1.9e-04, Loss: 2122.4
+Epoch [5/30], Step [300/1283], LR 1.9e-04, Loss: 2072.0
+Epoch [5/30], Step [400/1283], LR 1.9e-04, Loss: 2309.0
+Epoch [5/30], Step [500/1283], LR 2.0e-04, Loss: 1803.5
+Epoch [5/30], Step [600/1283], LR 2.0e-04, Loss: 1865.6
+Epoch [5/30], Step [700/1283], LR 2.0e-04, Loss: 1880.9
+Epoch [5/30], Step [800/1283], LR 2.0e-04, Loss: 2110.1
+Epoch [5/30], Step [900/1283], LR 2.0e-04, Loss: 2145.8
+Epoch [5/30], Step [1000/1283], LR 2.0e-04, Loss: 1686.1
+Epoch [5/30], Step [1100/1283], LR 2.0e-04, Loss: 1656.6
+Epoch [5/30], Step [1200/1283], LR 2.0e-04, Loss: 1817.5
+starting validation
+mAP score regular 75.17, mAP score EMA 78.16
+F1 score regular 53.36, Precision regular 37.40, Recall regular 93.05, F1 score EMA 52.67, Precision EMA 36.50, Recall EMA94.58
+best model Saving successfully.
+current_F1 = 53.36, highest_F1 = 53.36
+
+Prior (train), first 5 classes: tensor([0.8079, 0.2008, 0.3958, 0.1577, 0.1031], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'handbag' 'bottle' 'backpack' 'cup' 'dining table'
+ 'bench' 'cell phone']
+Epoch [6/30], Step [000/1283], LR 2.0e-04, Loss: 1638.7
+Epoch [6/30], Step [100/1283], LR 2.0e-04, Loss: 1316.0
+Epoch [6/30], Step [200/1283], LR 2.0e-04, Loss: 1833.9
+Epoch [6/30], Step [300/1283], LR 2.0e-04, Loss: 2020.5
+Epoch [6/30], Step [400/1283], LR 2.0e-04, Loss: 1665.9
+Epoch [6/30], Step [500/1283], LR 2.0e-04, Loss: 1806.8
+Epoch [6/30], Step [600/1283], LR 2.0e-04, Loss: 1779.2
+Epoch [6/30], Step [700/1283], LR 2.0e-04, Loss: 1508.0
+Epoch [6/30], Step [800/1283], LR 2.0e-04, Loss: 1689.5
+Epoch [6/30], Step [900/1283], LR 2.0e-04, Loss: 1753.8
+Epoch [6/30], Step [1000/1283], LR 2.0e-04, Loss: 1694.1
+Epoch [6/30], Step [1100/1283], LR 2.0e-04, Loss: 2284.5
+Epoch [6/30], Step [1200/1283], LR 2.0e-04, Loss: 1606.0
+starting validation
+mAP score regular 75.26, mAP score EMA 79.31
+F1 score regular 55.62, Precision regular 39.82, Recall regular 92.18, F1 score EMA 54.41, Precision EMA 38.17, Recall EMA94.68
+best model Saving successfully.
+current_F1 = 55.62, highest_F1 = 55.62
+
+Prior (train), first 5 classes: tensor([0.8011, 0.1915, 0.3822, 0.1485, 0.0955], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'handbag' 'bottle' 'cup' 'backpack' 'dining table'
+ 'bench' 'cell phone']
+Epoch [7/30], Step [000/1283], LR 2.0e-04, Loss: 1519.2
+Epoch [7/30], Step [100/1283], LR 2.0e-04, Loss: 1627.5
+Epoch [7/30], Step [200/1283], LR 2.0e-04, Loss: 1520.2
+Epoch [7/30], Step [300/1283], LR 2.0e-04, Loss: 1834.0
+Epoch [7/30], Step [400/1283], LR 2.0e-04, Loss: 1669.8
+Epoch [7/30], Step [500/1283], LR 2.0e-04, Loss: 1612.6
+Epoch [7/30], Step [600/1283], LR 2.0e-04, Loss: 1890.5
+Epoch [7/30], Step [700/1283], LR 2.0e-04, Loss: 1719.0
+Epoch [7/30], Step [800/1283], LR 2.0e-04, Loss: 1992.0
+Epoch [7/30], Step [900/1283], LR 2.0e-04, Loss: 1878.1
+Epoch [7/30], Step [1000/1283], LR 2.0e-04, Loss: 2235.0
+Epoch [7/30], Step [1100/1283], LR 2.0e-04, Loss: 2615.4
+Epoch [7/30], Step [1200/1283], LR 2.0e-04, Loss: 1630.6
+starting validation
+mAP score regular 75.72, mAP score EMA 79.95
+F1 score regular 60.00, Precision regular 44.87, Recall regular 90.52, F1 score EMA 55.89, Precision EMA 39.66, Recall EMA94.62
+best model Saving successfully.
+current_F1 = 60.00, highest_F1 = 60.00
+
+Prior (train), first 5 classes: tensor([0.7950, 0.1824, 0.3704, 0.1415, 0.0898], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'handbag' 'bottle' 'cup' 'backpack' 'dining table'
+ 'bench' 'cell phone']
+Epoch [8/30], Step [000/1283], LR 2.0e-04, Loss: 1490.0
+Epoch [8/30], Step [100/1283], LR 2.0e-04, Loss: 1521.5
+Epoch [8/30], Step [200/1283], LR 2.0e-04, Loss: 1813.4
+Epoch [8/30], Step [300/1283], LR 2.0e-04, Loss: 1640.8
+Epoch [8/30], Step [400/1283], LR 2.0e-04, Loss: 1601.7
+Epoch [8/30], Step [500/1283], LR 2.0e-04, Loss: 1583.7
+Epoch [8/30], Step [600/1283], LR 1.9e-04, Loss: 1759.2
+Epoch [8/30], Step [700/1283], LR 1.9e-04, Loss: 1375.4
+Epoch [8/30], Step [800/1283], LR 1.9e-04, Loss: 1545.8
+Epoch [8/30], Step [900/1283], LR 1.9e-04, Loss: 1484.3
+Epoch [8/30], Step [1000/1283], LR 1.9e-04, Loss: 1309.4
+Epoch [8/30], Step [1100/1283], LR 1.9e-04, Loss: 1705.2
+Epoch [8/30], Step [1200/1283], LR 1.9e-04, Loss: 1470.3
+starting validation
+mAP score regular 74.87, mAP score EMA 80.23
+F1 score regular 59.61, Precision regular 44.31, Recall regular 91.05, F1 score EMA 57.39, Precision EMA 41.23, Recall EMA94.38
+current_F1 = 59.61, highest_F1 = 60.00
+
+Prior (train), first 5 classes: tensor([0.7893, 0.1748, 0.3597, 0.1354, 0.0849], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'handbag' 'bottle' 'cup' 'dining table' 'backpack'
+ 'bench' 'cell phone']
+Epoch [9/30], Step [000/1283], LR 1.9e-04, Loss: 1720.0
+Epoch [9/30], Step [100/1283], LR 1.9e-04, Loss: 1469.7
+Epoch [9/30], Step [200/1283], LR 1.9e-04, Loss: 1554.1
+Epoch [9/30], Step [300/1283], LR 1.9e-04, Loss: 1500.6
+Epoch [9/30], Step [400/1283], LR 1.9e-04, Loss: 1524.5
+Epoch [9/30], Step [500/1283], LR 1.9e-04, Loss: 1702.3
+Epoch [9/30], Step [600/1283], LR 1.9e-04, Loss: 1494.0
+Epoch [9/30], Step [700/1283], LR 1.9e-04, Loss: 1754.6
+Epoch [9/30], Step [800/1283], LR 1.9e-04, Loss: 1373.4
+Epoch [9/30], Step [900/1283], LR 1.9e-04, Loss: 1621.1
+Epoch [9/30], Step [1000/1283], LR 1.9e-04, Loss: 1381.1
+Epoch [9/30], Step [1100/1283], LR 1.9e-04, Loss: 1338.9
+Epoch [9/30], Step [1200/1283], LR 1.9e-04, Loss: 1335.4
+starting validation
+mAP score regular 75.82, mAP score EMA 80.23
+F1 score regular 62.92, Precision regular 48.46, Recall regular 89.68, F1 score EMA 58.72, Precision EMA 42.67, Recall EMA94.12
+best model Saving successfully.
+current_F1 = 62.92, highest_F1 = 62.92
+
+Prior (train), first 5 classes: tensor([0.7837, 0.1686, 0.3505, 0.1302, 0.0809], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'handbag' 'bottle' 'cup' 'dining table' 'backpack'
+ 'bench' 'bowl']
+Epoch [10/30], Step [000/1283], LR 1.9e-04, Loss: 1248.4
+Epoch [10/30], Step [100/1283], LR 1.9e-04, Loss: 1222.1
+Epoch [10/30], Step [200/1283], LR 1.9e-04, Loss: 1501.4
+Epoch [10/30], Step [300/1283], LR 1.9e-04, Loss: 1524.5
+Epoch [10/30], Step [400/1283], LR 1.8e-04, Loss: 1302.5
+Epoch [10/30], Step [500/1283], LR 1.8e-04, Loss: 1407.2
+Epoch [10/30], Step [600/1283], LR 1.8e-04, Loss: 1334.6
+Epoch [10/30], Step [700/1283], LR 1.8e-04, Loss: 1593.5
+Epoch [10/30], Step [800/1283], LR 1.8e-04, Loss: 1210.3
+Epoch [10/30], Step [900/1283], LR 1.8e-04, Loss: 1449.6
+Epoch [10/30], Step [1000/1283], LR 1.8e-04, Loss: 1493.3
+Epoch [10/30], Step [1100/1283], LR 1.8e-04, Loss: 1290.8
+Epoch [10/30], Step [1200/1283], LR 1.8e-04, Loss: 1770.1
+starting validation
+mAP score regular 75.70, mAP score EMA 80.10
+F1 score regular 64.70, Precision regular 50.92, Recall regular 88.72, F1 score EMA 60.10, Precision EMA 44.24, Recall EMA93.67
+best model Saving successfully.
+current_F1 = 64.70, highest_F1 = 64.70
+
+Prior (train), first 5 classes: tensor([0.7786, 0.1625, 0.3424, 0.1256, 0.0775], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'handbag' 'bottle' 'cup' 'dining table' 'backpack'
+ 'bench' 'bowl']
+Epoch [11/30], Step [000/1283], LR 1.8e-04, Loss: 1167.4
+Epoch [11/30], Step [100/1283], LR 1.8e-04, Loss: 1458.5
+Epoch [11/30], Step [200/1283], LR 1.8e-04, Loss: 1190.7
+Epoch [11/30], Step [300/1283], LR 1.8e-04, Loss: 1268.6
+Epoch [11/30], Step [400/1283], LR 1.8e-04, Loss: 1578.8
+Epoch [11/30], Step [500/1283], LR 1.8e-04, Loss: 1344.6
+Epoch [11/30], Step [600/1283], LR 1.8e-04, Loss: 1243.8
+Epoch [11/30], Step [700/1283], LR 1.7e-04, Loss: 1446.7
+Epoch [11/30], Step [800/1283], LR 1.7e-04, Loss: 1156.1
+Epoch [11/30], Step [900/1283], LR 1.7e-04, Loss: 1631.4
+Epoch [11/30], Step [1000/1283], LR 1.7e-04, Loss: 1498.4
+Epoch [11/30], Step [1100/1283], LR 1.7e-04, Loss: 1157.5
+Epoch [11/30], Step [1200/1283], LR 1.7e-04, Loss: 1398.9
+starting validation
+mAP score regular 75.84, mAP score EMA 79.92
+F1 score regular 66.13, Precision regular 52.96, Recall regular 88.01, F1 score EMA 61.53, Precision EMA 45.93, Recall EMA93.17
+best model Saving successfully.
+current_F1 = 66.13, highest_F1 = 66.13
+
+Prior (train), first 5 classes: tensor([0.7737, 0.1574, 0.3341, 0.1213, 0.0744], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'handbag' 'bottle' 'cup' 'dining table' 'backpack'
+ 'bench' 'bowl']
+Epoch [12/30], Step [000/1283], LR 1.7e-04, Loss: 1167.6
+Epoch [12/30], Step [100/1283], LR 1.7e-04, Loss: 1529.8
+Epoch [12/30], Step [200/1283], LR 1.7e-04, Loss: 1266.7
+Epoch [12/30], Step [300/1283], LR 1.7e-04, Loss: 1167.6
+Epoch [12/30], Step [400/1283], LR 1.7e-04, Loss: 1353.6
+Epoch [12/30], Step [500/1283], LR 1.7e-04, Loss: 1182.2
+Epoch [12/30], Step [600/1283], LR 1.7e-04, Loss: 1282.2
+Epoch [12/30], Step [700/1283], LR 1.7e-04, Loss: 1318.2
+Epoch [12/30], Step [800/1283], LR 1.6e-04, Loss: 1085.3
+Epoch [12/30], Step [900/1283], LR 1.6e-04, Loss: 1744.2
+Epoch [12/30], Step [1000/1283], LR 1.6e-04, Loss: 1451.1
+Epoch [12/30], Step [1100/1283], LR 1.6e-04, Loss: 1268.5
+Epoch [12/30], Step [1200/1283], LR 1.6e-04, Loss: 1216.9
+starting validation
+mAP score regular 76.12, mAP score EMA 79.74
+F1 score regular 67.16, Precision regular 54.48, Recall regular 87.55, F1 score EMA 62.94, Precision EMA 47.68, Recall EMA92.59
+best model Saving successfully.
+current_F1 = 67.16, highest_F1 = 67.16
+
+Prior (train), first 5 classes: tensor([0.7686, 0.1526, 0.3267, 0.1173, 0.0715], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'handbag' 'bottle' 'cup' 'dining table' 'backpack'
+ 'bench' 'bowl']
+Epoch [13/30], Step [000/1283], LR 1.6e-04, Loss: 1192.6
+Epoch [13/30], Step [100/1283], LR 1.6e-04, Loss: 1599.3
+Epoch [13/30], Step [200/1283], LR 1.6e-04, Loss: 1524.1
+Epoch [13/30], Step [300/1283], LR 1.6e-04, Loss: 1601.2
+Epoch [13/30], Step [400/1283], LR 1.6e-04, Loss: 1210.9
+Epoch [13/30], Step [500/1283], LR 1.6e-04, Loss: 1301.9
+Epoch [13/30], Step [600/1283], LR 1.6e-04, Loss: 1919.0
+Epoch [13/30], Step [700/1283], LR 1.6e-04, Loss: 1057.7
+Epoch [13/30], Step [800/1283], LR 1.5e-04, Loss: 1643.2
+Epoch [13/30], Step [900/1283], LR 1.5e-04, Loss: 1256.6
+Epoch [13/30], Step [1000/1283], LR 1.5e-04, Loss: 1103.2
+Epoch [13/30], Step [1100/1283], LR 1.5e-04, Loss: 1262.2
+Epoch [13/30], Step [1200/1283], LR 1.5e-04, Loss: 1328.1
+starting validation
+mAP score regular 75.93, mAP score EMA 79.48
+F1 score regular 66.39, Precision regular 53.37, Recall regular 87.83, F1 score EMA 64.35, Precision EMA 49.50, Recall EMA91.92
+current_F1 = 66.39, highest_F1 = 67.16
+
+Prior (train), first 5 classes: tensor([0.7638, 0.1478, 0.3200, 0.1137, 0.0689], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'handbag' 'bottle' 'cup' 'dining table' 'backpack'
+ 'bench' 'bowl']
+Epoch [14/30], Step [000/1283], LR 1.5e-04, Loss: 1025.0
+Epoch [14/30], Step [100/1283], LR 1.5e-04, Loss: 948.2
+Epoch [14/30], Step [200/1283], LR 1.5e-04, Loss: 1212.9
+Epoch [14/30], Step [300/1283], LR 1.5e-04, Loss: 1391.4
+Epoch [14/30], Step [400/1283], LR 1.5e-04, Loss: 1201.1
+Epoch [14/30], Step [500/1283], LR 1.5e-04, Loss: 871.9
+Epoch [14/30], Step [600/1283], LR 1.4e-04, Loss: 1070.1
+Epoch [14/30], Step [700/1283], LR 1.4e-04, Loss: 1152.3
+Epoch [14/30], Step [800/1283], LR 1.4e-04, Loss: 1219.6
+Epoch [14/30], Step [900/1283], LR 1.4e-04, Loss: 974.9
+Epoch [14/30], Step [1000/1283], LR 1.4e-04, Loss: 1010.6
+Epoch [14/30], Step [1100/1283], LR 1.4e-04, Loss: 1220.3
+Epoch [14/30], Step [1200/1283], LR 1.4e-04, Loss: 1392.1
+starting validation
+mAP score regular 75.42, mAP score EMA 79.20
+F1 score regular 68.12, Precision regular 56.45, Recall regular 85.86, F1 score EMA 65.78, Precision EMA 51.46, Recall EMA91.12
+best model Saving successfully.
+current_F1 = 68.12, highest_F1 = 68.12
+
+Prior (train), first 5 classes: tensor([0.7594, 0.1436, 0.3137, 0.1100, 0.0667], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'handbag' 'bottle' 'cup' 'dining table' 'backpack'
+ 'bench' 'bowl']
+Epoch [15/30], Step [000/1283], LR 1.4e-04, Loss: 934.5
+Epoch [15/30], Step [100/1283], LR 1.4e-04, Loss: 1131.1
+Epoch [15/30], Step [200/1283], LR 1.4e-04, Loss: 906.2
+Epoch [15/30], Step [300/1283], LR 1.4e-04, Loss: 1113.0
+Epoch [15/30], Step [400/1283], LR 1.3e-04, Loss: 1275.0
+Epoch [15/30], Step [500/1283], LR 1.3e-04, Loss: 1014.2
+Epoch [15/30], Step [600/1283], LR 1.3e-04, Loss: 1021.0
+Epoch [15/30], Step [700/1283], LR 1.3e-04, Loss: 1571.7
+Epoch [15/30], Step [800/1283], LR 1.3e-04, Loss: 1135.1
+Epoch [15/30], Step [900/1283], LR 1.3e-04, Loss: 1116.8
+Epoch [15/30], Step [1000/1283], LR 1.3e-04, Loss: 1255.6
+Epoch [15/30], Step [1100/1283], LR 1.3e-04, Loss: 1228.3
+Epoch [15/30], Step [1200/1283], LR 1.3e-04, Loss: 1104.6
+starting validation
+mAP score regular 75.46, mAP score EMA 78.91
+F1 score regular 68.41, Precision regular 56.87, Recall regular 85.81, F1 score EMA 67.26, Precision EMA 53.61, Recall EMA90.23
+best model Saving successfully.
+current_F1 = 68.41, highest_F1 = 68.41
+
+Prior (train), first 5 classes: tensor([0.7551, 0.1393, 0.3077, 0.1067, 0.0646], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'handbag' 'bottle' 'cup' 'dining table' 'backpack'
+ 'bench' 'bowl']
+Epoch [16/30], Step [000/1283], LR 1.3e-04, Loss: 1157.3
+Epoch [16/30], Step [100/1283], LR 1.2e-04, Loss: 1046.9
+Epoch [16/30], Step [200/1283], LR 1.2e-04, Loss: 1061.1
+Epoch [16/30], Step [300/1283], LR 1.2e-04, Loss: 1332.6
+Epoch [16/30], Step [400/1283], LR 1.2e-04, Loss: 1454.2
+Epoch [16/30], Step [500/1283], LR 1.2e-04, Loss: 1172.3
+Epoch [16/30], Step [600/1283], LR 1.2e-04, Loss: 1124.9
+Epoch [16/30], Step [700/1283], LR 1.2e-04, Loss: 1016.2
+Epoch [16/30], Step [800/1283], LR 1.2e-04, Loss: 1025.2
+Epoch [16/30], Step [900/1283], LR 1.2e-04, Loss: 1009.5
+Epoch [16/30], Step [1000/1283], LR 1.2e-04, Loss: 1017.1
+Epoch [16/30], Step [1100/1283], LR 1.1e-04, Loss: 1210.0
+Epoch [16/30], Step [1200/1283], LR 1.1e-04, Loss: 923.3
+starting validation
+mAP score regular 75.42, mAP score EMA 78.61
+F1 score regular 71.24, Precision regular 62.65, Recall regular 82.57, F1 score EMA 68.64, Precision EMA 55.75, Recall EMA89.26
+best model Saving successfully.
+current_F1 = 71.24, highest_F1 = 71.24
+
+Prior (train), first 5 classes: tensor([0.7509, 0.1353, 0.3019, 0.1039, 0.0628], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'handbag' 'bottle' 'cup' 'dining table' 'backpack'
+ 'bench' 'bowl']
+Epoch [17/30], Step [000/1283], LR 1.1e-04, Loss: 1266.8
+Epoch [17/30], Step [100/1283], LR 1.1e-04, Loss: 1156.7
+Epoch [17/30], Step [200/1283], LR 1.1e-04, Loss: 910.8
+Epoch [17/30], Step [300/1283], LR 1.1e-04, Loss: 995.1
+Epoch [17/30], Step [400/1283], LR 1.1e-04, Loss: 995.3
+Epoch [17/30], Step [500/1283], LR 1.1e-04, Loss: 1027.2
+Epoch [17/30], Step [600/1283], LR 1.1e-04, Loss: 928.9
+Epoch [17/30], Step [700/1283], LR 1.1e-04, Loss: 1168.8
+Epoch [17/30], Step [800/1283], LR 1.0e-04, Loss: 865.5
+Epoch [17/30], Step [900/1283], LR 1.0e-04, Loss: 1025.6
+Epoch [17/30], Step [1000/1283], LR 1.0e-04, Loss: 782.9
+Epoch [17/30], Step [1100/1283], LR 1.0e-04, Loss: 810.0
+Epoch [17/30], Step [1200/1283], LR 1.0e-04, Loss: 966.9
+starting validation
+mAP score regular 75.02, mAP score EMA 78.25
+F1 score regular 70.46, Precision regular 60.75, Recall regular 83.87, F1 score EMA 69.96, Precision EMA 58.00, Recall EMA88.13
+current_F1 = 70.46, highest_F1 = 71.24
+
+Prior (train), first 5 classes: tensor([0.7469, 0.1316, 0.2961, 0.1012, 0.0612], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'bottle' 'handbag' 'cup' 'dining table' 'backpack'
+ 'bench' 'bowl']
+Epoch [18/30], Step [000/1283], LR 1.0e-04, Loss: 984.1
+Epoch [18/30], Step [100/1283], LR 9.9e-05, Loss: 774.3
+Epoch [18/30], Step [200/1283], LR 9.8e-05, Loss: 1050.8
+Epoch [18/30], Step [300/1283], LR 9.7e-05, Loss: 963.7
+Epoch [18/30], Step [400/1283], LR 9.6e-05, Loss: 856.5
+Epoch [18/30], Step [500/1283], LR 9.5e-05, Loss: 999.4
+Epoch [18/30], Step [600/1283], LR 9.4e-05, Loss: 994.7
+Epoch [18/30], Step [700/1283], LR 9.3e-05, Loss: 944.6
+Epoch [18/30], Step [800/1283], LR 9.2e-05, Loss: 1042.8
+Epoch [18/30], Step [900/1283], LR 9.1e-05, Loss: 1034.5
+Epoch [18/30], Step [1000/1283], LR 9.0e-05, Loss: 799.8
+Epoch [18/30], Step [1100/1283], LR 8.9e-05, Loss: 1510.7
+Epoch [18/30], Step [1200/1283], LR 8.8e-05, Loss: 1132.2
+starting validation
+mAP score regular 75.13, mAP score EMA 77.92
+F1 score regular 72.41, Precision regular 65.70, Recall regular 80.65, F1 score EMA 71.08, Precision EMA 60.09, Recall EMA86.99
+best model Saving successfully.
+current_F1 = 72.41, highest_F1 = 72.41
+
+Prior (train), first 5 classes: tensor([0.7428, 0.1283, 0.2908, 0.0985, 0.0597], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'bottle' 'cup' 'handbag' 'dining table' 'backpack'
+ 'bench' 'bowl']
+Epoch [19/30], Step [000/1283], LR 8.7e-05, Loss: 788.7
+Epoch [19/30], Step [100/1283], LR 8.6e-05, Loss: 883.0
+Epoch [19/30], Step [200/1283], LR 8.5e-05, Loss: 830.1
+Epoch [19/30], Step [300/1283], LR 8.4e-05, Loss: 1025.8
+Epoch [19/30], Step [400/1283], LR 8.3e-05, Loss: 862.2
+Epoch [19/30], Step [500/1283], LR 8.2e-05, Loss: 942.1
+Epoch [19/30], Step [600/1283], LR 8.1e-05, Loss: 986.1
+Epoch [19/30], Step [700/1283], LR 8.0e-05, Loss: 1088.9
+Epoch [19/30], Step [800/1283], LR 7.9e-05, Loss: 871.3
+Epoch [19/30], Step [900/1283], LR 7.8e-05, Loss: 717.1
+Epoch [19/30], Step [1000/1283], LR 7.7e-05, Loss: 717.9
+Epoch [19/30], Step [1100/1283], LR 7.6e-05, Loss: 1045.8
+Epoch [19/30], Step [1200/1283], LR 7.5e-05, Loss: 1023.0
+starting validation
+mAP score regular 75.27, mAP score EMA 77.62
+F1 score regular 73.57, Precision regular 68.38, Recall regular 79.62, F1 score EMA 72.05, Precision EMA 62.12, Recall EMA85.75
+best model Saving successfully.
+current_F1 = 73.57, highest_F1 = 73.57
+
+Prior (train), first 5 classes: tensor([0.7388, 0.1248, 0.2855, 0.0960, 0.0583], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'cup' 'bottle' 'dining table' 'handbag' 'backpack'
+ 'bench' 'bowl']
+Epoch [20/30], Step [000/1283], LR 7.4e-05, Loss: 906.3
+Epoch [20/30], Step [100/1283], LR 7.3e-05, Loss: 1453.3
+Epoch [20/30], Step [200/1283], LR 7.2e-05, Loss: 787.1
+Epoch [20/30], Step [300/1283], LR 7.1e-05, Loss: 798.5
+Epoch [20/30], Step [400/1283], LR 7.0e-05, Loss: 854.6
+Epoch [20/30], Step [500/1283], LR 6.9e-05, Loss: 1082.5
+Epoch [20/30], Step [600/1283], LR 6.8e-05, Loss: 1054.5
+Epoch [20/30], Step [700/1283], LR 6.7e-05, Loss: 698.8
+Epoch [20/30], Step [800/1283], LR 6.6e-05, Loss: 757.7
+Epoch [20/30], Step [900/1283], LR 6.5e-05, Loss: 758.5
+Epoch [20/30], Step [1000/1283], LR 6.4e-05, Loss: 1181.8
+Epoch [20/30], Step [1100/1283], LR 6.3e-05, Loss: 1019.9
+Epoch [20/30], Step [1200/1283], LR 6.2e-05, Loss: 776.4
+starting validation
+mAP score regular 74.96, mAP score EMA 77.26
+F1 score regular 73.51, Precision regular 68.70, Recall regular 79.05, F1 score EMA 72.80, Precision EMA 64.01, Recall EMA84.38
+current_F1 = 73.51, highest_F1 = 73.57
+
+Prior (train), first 5 classes: tensor([0.7349, 0.1216, 0.2803, 0.0937, 0.0571], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'cup' 'dining table' 'bottle' 'handbag' 'backpack'
+ 'bench' 'bowl']
+Epoch [21/30], Step [000/1283], LR 6.2e-05, Loss: 1058.3
+Epoch [21/30], Step [100/1283], LR 6.1e-05, Loss: 798.7
+Epoch [21/30], Step [200/1283], LR 6.0e-05, Loss: 800.8
+Epoch [21/30], Step [300/1283], LR 5.9e-05, Loss: 751.9
+Epoch [21/30], Step [400/1283], LR 5.8e-05, Loss: 1133.3
+Epoch [21/30], Step [500/1283], LR 5.7e-05, Loss: 836.9
+Epoch [21/30], Step [600/1283], LR 5.6e-05, Loss: 733.8
+Epoch [21/30], Step [700/1283], LR 5.5e-05, Loss: 932.1
+Epoch [21/30], Step [800/1283], LR 5.4e-05, Loss: 847.7
+Epoch [21/30], Step [900/1283], LR 5.3e-05, Loss: 738.1
+Epoch [21/30], Step [1000/1283], LR 5.3e-05, Loss: 732.1
+Epoch [21/30], Step [1100/1283], LR 5.2e-05, Loss: 692.6
+Epoch [21/30], Step [1200/1283], LR 5.1e-05, Loss: 843.6
+starting validation
+mAP score regular 75.04, mAP score EMA 76.91
+F1 score regular 73.73, Precision regular 69.79, Recall regular 78.15, F1 score EMA 73.46, Precision EMA 65.86, Recall EMA83.04
+best model Saving successfully.
+current_F1 = 73.73, highest_F1 = 73.73
+
+Prior (train), first 5 classes: tensor([0.7311, 0.1184, 0.2755, 0.0913, 0.0560], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'cup' 'dining table' 'bottle' 'handbag' 'backpack'
+ 'bench' 'bowl']
+Epoch [22/30], Step [000/1283], LR 5.0e-05, Loss: 742.2
+Epoch [22/30], Step [100/1283], LR 4.9e-05, Loss: 936.4
+Epoch [22/30], Step [200/1283], LR 4.8e-05, Loss: 648.8
+Epoch [22/30], Step [300/1283], LR 4.7e-05, Loss: 873.7
+Epoch [22/30], Step [400/1283], LR 4.6e-05, Loss: 883.3
+Epoch [22/30], Step [500/1283], LR 4.6e-05, Loss: 1060.5
+Epoch [22/30], Step [600/1283], LR 4.5e-05, Loss: 680.2
+Epoch [22/30], Step [700/1283], LR 4.4e-05, Loss: 843.6
+Epoch [22/30], Step [800/1283], LR 4.3e-05, Loss: 848.2
+Epoch [22/30], Step [900/1283], LR 4.2e-05, Loss: 720.2
+Epoch [22/30], Step [1000/1283], LR 4.1e-05, Loss: 797.6
+Epoch [22/30], Step [1100/1283], LR 4.1e-05, Loss: 799.9
+Epoch [22/30], Step [1200/1283], LR 4.0e-05, Loss: 677.7
+starting validation
+mAP score regular 74.81, mAP score EMA 76.60
+F1 score regular 74.04, Precision regular 72.04, Recall regular 76.15, F1 score EMA 74.03, Precision EMA 67.77, Recall EMA81.58
+best model Saving successfully.
+current_F1 = 74.04, highest_F1 = 74.04
+
+Prior (train), first 5 classes: tensor([0.7275, 0.1154, 0.2709, 0.0891, 0.0549], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'cup' 'dining table' 'bottle' 'handbag' 'backpack'
+ 'bench' 'bowl']
+Epoch [23/30], Step [000/1283], LR 3.9e-05, Loss: 768.5
+Epoch [23/30], Step [100/1283], LR 3.8e-05, Loss: 728.5
+Epoch [23/30], Step [200/1283], LR 3.8e-05, Loss: 790.6
+Epoch [23/30], Step [300/1283], LR 3.7e-05, Loss: 754.5
+Epoch [23/30], Step [400/1283], LR 3.6e-05, Loss: 785.4
+Epoch [23/30], Step [500/1283], LR 3.5e-05, Loss: 622.1
+Epoch [23/30], Step [600/1283], LR 3.4e-05, Loss: 775.0
+Epoch [23/30], Step [700/1283], LR 3.4e-05, Loss: 767.2
+Epoch [23/30], Step [800/1283], LR 3.3e-05, Loss: 768.0
+Epoch [23/30], Step [900/1283], LR 3.2e-05, Loss: 877.3
+Epoch [23/30], Step [1000/1283], LR 3.1e-05, Loss: 775.5
+Epoch [23/30], Step [1100/1283], LR 3.1e-05, Loss: 816.3
+Epoch [23/30], Step [1200/1283], LR 3.0e-05, Loss: 699.6
+starting validation
+mAP score regular 75.02, mAP score EMA 76.32
+F1 score regular 74.36, Precision regular 73.03, Recall regular 75.74, F1 score EMA 74.39, Precision EMA 69.46, Recall EMA80.08
+best model Saving successfully.
+current_F1 = 74.36, highest_F1 = 74.36
+
+Prior (train), first 5 classes: tensor([0.7238, 0.1126, 0.2666, 0.0871, 0.0538], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'dining table' 'cup' 'bottle' 'handbag' 'backpack'
+ 'bench' 'bowl']
+Epoch [24/30], Step [000/1283], LR 2.9e-05, Loss: 592.9
+Epoch [24/30], Step [100/1283], LR 2.9e-05, Loss: 737.9
+Epoch [24/30], Step [200/1283], LR 2.8e-05, Loss: 696.5
+Epoch [24/30], Step [300/1283], LR 2.7e-05, Loss: 681.5
+Epoch [24/30], Step [400/1283], LR 2.6e-05, Loss: 786.9
+Epoch [24/30], Step [500/1283], LR 2.6e-05, Loss: 715.9
+Epoch [24/30], Step [600/1283], LR 2.5e-05, Loss: 753.1
+Epoch [24/30], Step [700/1283], LR 2.4e-05, Loss: 635.9
+Epoch [24/30], Step [800/1283], LR 2.4e-05, Loss: 744.4
+Epoch [24/30], Step [900/1283], LR 2.3e-05, Loss: 684.4
+Epoch [24/30], Step [1000/1283], LR 2.2e-05, Loss: 814.0
+Epoch [24/30], Step [1100/1283], LR 2.2e-05, Loss: 742.6
+Epoch [24/30], Step [1200/1283], LR 2.1e-05, Loss: 895.6
+starting validation
+mAP score regular 75.12, mAP score EMA 76.03
+F1 score regular 74.68, Precision regular 74.34, Recall regular 75.03, F1 score EMA 74.63, Precision EMA 70.96, Recall EMA78.70
+best model Saving successfully.
+current_F1 = 74.68, highest_F1 = 74.68
+
+Prior (train), first 5 classes: tensor([0.7204, 0.1101, 0.2624, 0.0853, 0.0529], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'dining table' 'cup' 'bottle' 'handbag' 'backpack'
+ 'bench' 'bowl']
+Epoch [25/30], Step [000/1283], LR 2.1e-05, Loss: 904.4
+Epoch [25/30], Step [100/1283], LR 2.0e-05, Loss: 725.6
+Epoch [25/30], Step [200/1283], LR 1.9e-05, Loss: 792.9
+Epoch [25/30], Step [300/1283], LR 1.9e-05, Loss: 655.9
+Epoch [25/30], Step [400/1283], LR 1.8e-05, Loss: 709.4
+Epoch [25/30], Step [500/1283], LR 1.8e-05, Loss: 822.7
+Epoch [25/30], Step [600/1283], LR 1.7e-05, Loss: 748.4
+Epoch [25/30], Step [700/1283], LR 1.7e-05, Loss: 728.4
+Epoch [25/30], Step [800/1283], LR 1.6e-05, Loss: 590.7
+Epoch [25/30], Step [900/1283], LR 1.5e-05, Loss: 740.2
+Epoch [25/30], Step [1000/1283], LR 1.5e-05, Loss: 831.4
+Epoch [25/30], Step [1100/1283], LR 1.4e-05, Loss: 554.1
+Epoch [25/30], Step [1200/1283], LR 1.4e-05, Loss: 623.6
+starting validation
+mAP score regular 74.79, mAP score EMA 75.80
+F1 score regular 74.41, Precision regular 75.54, Recall regular 73.31, F1 score EMA 74.80, Precision EMA 72.35, Recall EMA77.41
+current_F1 = 74.41, highest_F1 = 74.68
+
+Prior (train), first 5 classes: tensor([0.7170, 0.1076, 0.2584, 0.0835, 0.0520], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'dining table' 'cup' 'bottle' 'handbag' 'backpack'
+ 'bench' 'bowl']
+Epoch [26/30], Step [000/1283], LR 1.3e-05, Loss: 571.5
+Epoch [26/30], Step [100/1283], LR 1.3e-05, Loss: 555.6
+Epoch [26/30], Step [200/1283], LR 1.2e-05, Loss: 677.4
+Epoch [26/30], Step [300/1283], LR 1.2e-05, Loss: 546.7
+Epoch [26/30], Step [400/1283], LR 1.1e-05, Loss: 489.0
+Epoch [26/30], Step [500/1283], LR 1.1e-05, Loss: 603.6
+Epoch [26/30], Step [600/1283], LR 1.0e-05, Loss: 624.7
+Epoch [26/30], Step [700/1283], LR 1.0e-05, Loss: 646.2
+Epoch [26/30], Step [800/1283], LR 9.6e-06, Loss: 665.0
+Epoch [26/30], Step [900/1283], LR 9.2e-06, Loss: 788.7
+Epoch [26/30], Step [1000/1283], LR 8.7e-06, Loss: 745.2
+Epoch [26/30], Step [1100/1283], LR 8.3e-06, Loss: 577.2
+Epoch [26/30], Step [1200/1283], LR 7.9e-06, Loss: 502.3
+starting validation
+mAP score regular 75.01, mAP score EMA 75.59
+F1 score regular 74.63, Precision regular 75.93, Recall regular 73.38, F1 score EMA 74.81, Precision EMA 73.44, Recall EMA76.23
+current_F1 = 74.63, highest_F1 = 74.68
+
+Prior (train), first 5 classes: tensor([0.7137, 0.1053, 0.2546, 0.0819, 0.0512], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'dining table' 'cup' 'bottle' 'handbag' 'backpack'
+ 'bench' 'bowl']
+Epoch [27/30], Step [000/1283], LR 7.6e-06, Loss: 647.4
+Epoch [27/30], Step [100/1283], LR 7.2e-06, Loss: 708.3
+Epoch [27/30], Step [200/1283], LR 6.8e-06, Loss: 584.5
+Epoch [27/30], Step [300/1283], LR 6.5e-06, Loss: 679.3
+Epoch [27/30], Step [400/1283], LR 6.1e-06, Loss: 770.4
+Epoch [27/30], Step [500/1283], LR 5.8e-06, Loss: 839.5
+Epoch [27/30], Step [600/1283], LR 5.4e-06, Loss: 610.4
+Epoch [27/30], Step [700/1283], LR 5.1e-06, Loss: 639.5
+Epoch [27/30], Step [800/1283], LR 4.8e-06, Loss: 563.8
+Epoch [27/30], Step [900/1283], LR 4.5e-06, Loss: 690.7
+Epoch [27/30], Step [1000/1283], LR 4.2e-06, Loss: 694.0
+Epoch [27/30], Step [1100/1283], LR 3.9e-06, Loss: 1083.5
+Epoch [27/30], Step [1200/1283], LR 3.6e-06, Loss: 681.4
+starting validation
+mAP score regular 74.83, mAP score EMA 75.39
+F1 score regular 74.49, Precision regular 76.51, Recall regular 72.58, F1 score EMA 74.79, Precision EMA 74.35, Recall EMA75.24
+current_F1 = 74.49, highest_F1 = 74.68
+
+Prior (train), first 5 classes: tensor([0.7105, 0.1032, 0.2511, 0.0803, 0.0504], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'dining table' 'cup' 'bottle' 'handbag' 'backpack'
+ 'bench' 'bowl']
+Epoch [28/30], Step [000/1283], LR 3.4e-06, Loss: 636.0
+Epoch [28/30], Step [100/1283], LR 3.1e-06, Loss: 740.0
+Epoch [28/30], Step [200/1283], LR 2.9e-06, Loss: 705.1
+Epoch [28/30], Step [300/1283], LR 2.7e-06, Loss: 577.9
+Epoch [28/30], Step [400/1283], LR 2.4e-06, Loss: 543.6
+Epoch [28/30], Step [500/1283], LR 2.2e-06, Loss: 991.3
+Epoch [28/30], Step [600/1283], LR 2.0e-06, Loss: 751.1
+Epoch [28/30], Step [700/1283], LR 1.8e-06, Loss: 548.5
+Epoch [28/30], Step [800/1283], LR 1.6e-06, Loss: 667.6
+Epoch [28/30], Step [900/1283], LR 1.4e-06, Loss: 875.4
+Epoch [28/30], Step [1000/1283], LR 1.3e-06, Loss: 703.0
+Epoch [28/30], Step [1100/1283], LR 1.1e-06, Loss: 709.7
+Epoch [28/30], Step [1200/1283], LR 9.7e-07, Loss: 597.0
+starting validation
+mAP score regular 74.74, mAP score EMA 75.22
+F1 score regular 74.32, Precision regular 76.86, Recall regular 71.94, F1 score EMA 74.72, Precision EMA 75.05, Recall EMA74.39
+current_F1 = 74.32, highest_F1 = 74.68
+
+Prior (train), first 5 classes: tensor([0.7075, 0.1012, 0.2478, 0.0789, 0.0497], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'dining table' 'cup' 'bottle' 'handbag' 'backpack'
+ 'bowl' 'bench']
+Epoch [29/30], Step [000/1283], LR 8.5e-07, Loss: 739.6
+Epoch [29/30], Step [100/1283], LR 7.3e-07, Loss: 657.7
+Epoch [29/30], Step [200/1283], LR 6.1e-07, Loss: 1085.4
+Epoch [29/30], Step [300/1283], LR 5.0e-07, Loss: 614.7
+Epoch [29/30], Step [400/1283], LR 4.0e-07, Loss: 518.0
+Epoch [29/30], Step [500/1283], LR 3.2e-07, Loss: 573.5
+Epoch [29/30], Step [600/1283], LR 2.4e-07, Loss: 749.6
+Epoch [29/30], Step [700/1283], LR 1.8e-07, Loss: 660.1
+Epoch [29/30], Step [800/1283], LR 1.2e-07, Loss: 688.0
+Epoch [29/30], Step [900/1283], LR 7.6e-08, Loss: 770.2
+Epoch [29/30], Step [1000/1283], LR 4.2e-08, Loss: 830.9
+Epoch [29/30], Step [1100/1283], LR 1.8e-08, Loss: 581.8
+Epoch [29/30], Step [1200/1283], LR 4.2e-09, Loss: 719.9
+starting validation
+wandb: Waiting for W&B process to finish... (success).
+wandb: 
+wandb: Run history:
+wandb:  BCE_loss █▇▅▄▃▄▃▄▄▃▃▃▂▃▂▂▂▂▃▂▂▂▂▁▂▂▁▂▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  F1 score ▁▃▃▄▃▄▄▅▅▆▆▆▇▆▇▇▇▇████████████
+wandb: Precision ▁▂▂▃▂▃▃▄▄▄▅▅▅▅▅▅▆▆▇▇▇▇▇▇██████
+wandb:    Recall ▇█████▇▇▇▇▆▆▆▆▅▅▄▅▄▃▃▃▂▂▂▁▁▁▁▁
+wandb:       mAP ▁▅▇██████████████████████▇██▇▇
+wandb: 
+wandb: Run summary:
+wandb:  BCE_loss 330.06207
+wandb:  F1 score 74.33473
+wandb: Precision 76.88486
+wandb:    Recall 71.94833
+wandb:       mAP 74.66287
+wandb: 
+wandb: 🚀 View run train__lrsd_rpneg_base_bce_posWeight0.6 at: https://wandb.ai/zhangshichuan/base_bce_posWeight/runs/42e2x1cn
+wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20230928_003722-42e2x1cn/logs
+mAP score regular 74.66, mAP score EMA 75.10
+F1 score regular 74.33, Precision regular 76.88, Recall regular 71.95, F1 score EMA 74.67, Precision EMA 75.62, Recall EMA73.74
+current_F1 = 74.33, highest_F1 = 74.68
+
+Prior (train), first 5 classes: tensor([0.7048, 0.0992, 0.2447, 0.0775, 0.0490], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'dining table' 'cup' 'bottle' 'handbag' 'backpack'
+ 'bowl' 'bench']
+wandb: Currently logged in as: zhangshichuan. Use `wandb login --relogin` to force relogin
+wandb: wandb version 0.15.11 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.15.0
+wandb: Run data is saved locally in /scratch/nlp/jiazixia/rl_enhanced/PartialLabelingCSL-zsc/wandb/run-20230928_050639-owcm08kd
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run train__lrsd_rpneg_base_bce_posWeight0.8
+wandb: ⭐️ View project at https://wandb.ai/zhangshichuan/base_bce_posWeight
+wandb: 🚀 View run at https://wandb.ai/zhangshichuan/base_bce_posWeight/runs/owcm08kd
+creating model...
+done
+
+loading annotations into memory...
+Done (t=4.39s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=8.55s)
+creating index...
+index created!
+len(val_dataset)):  40137
+len(train_dataset)):  82081
+Original stat: [0.55035879 0.02786272 0.10484765 0.0297511  0.02732667 0.034003
+ 0.03001913 0.05264312 0.02556012 0.03524567]
+Simulate coco. Mode: rps. Param: 0.800000
+Simulated stat: [0.11003765 0.0056164  0.02088181 0.00562859 0.00581133]
+Used parameters:
+Image_size: 448
+Learning_rate: 0.0002
+Epochs: 30
+Prior file was found in given path.
+Prior file was loaded successfully. 
+Epoch [0/30], Step [000/1283], LR 8.0e-06, Loss: 7035.2
+Epoch [0/30], Step [100/1283], LR 8.1e-06, Loss: 6779.4
+Epoch [0/30], Step [200/1283], LR 8.3e-06, Loss: 6199.8
+Epoch [0/30], Step [300/1283], LR 8.7e-06, Loss: 5889.8
+Epoch [0/30], Step [400/1283], LR 9.3e-06, Loss: 5420.5
+Epoch [0/30], Step [500/1283], LR 1.0e-05, Loss: 5145.1
+Epoch [0/30], Step [600/1283], LR 1.1e-05, Loss: 5276.7
+Epoch [0/30], Step [700/1283], LR 1.2e-05, Loss: 4675.0
+Epoch [0/30], Step [800/1283], LR 1.3e-05, Loss: 4337.2
+Epoch [0/30], Step [900/1283], LR 1.4e-05, Loss: 3447.1
+Epoch [0/30], Step [1000/1283], LR 1.6e-05, Loss: 3557.8
+Epoch [0/30], Step [1100/1283], LR 1.8e-05, Loss: 3430.3
+Epoch [0/30], Step [1200/1283], LR 1.9e-05, Loss: 3741.4
+starting validation
+/scratch/jiazixia/.conda/envs/docre_clone/lib/python3.8/site-packages/torch/optim/lr_scheduler.py:131: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  warnings.warn("Detected call of `lr_scheduler.step()` before `optimizer.step()`. "
+mAP score regular 54.24, mAP score EMA 14.60
+F1 score regular 36.10, Precision regular 22.55, Recall regular 90.51, F1 score EMA 16.26, Precision EMA 9.17, Recall EMA71.77
+best model Saving successfully.
+current_F1 = 36.10, highest_F1 = 36.10
+
+Prior (train), first 5 classes: tensor([0.8519, 0.4023, 0.5966, 0.3489, 0.2881], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'bottle' 'handbag' 'dining table' 'cup' 'bench'
+ 'backpack' 'cell phone']
+Epoch [1/30], Step [000/1283], LR 2.1e-05, Loss: 3345.9
+Epoch [1/30], Step [100/1283], LR 2.3e-05, Loss: 3608.1
+Epoch [1/30], Step [200/1283], LR 2.5e-05, Loss: 3408.5
+Epoch [1/30], Step [300/1283], LR 2.7e-05, Loss: 3063.1
+Epoch [1/30], Step [400/1283], LR 3.0e-05, Loss: 2739.6
+Epoch [1/30], Step [500/1283], LR 3.2e-05, Loss: 2846.1
+Epoch [1/30], Step [600/1283], LR 3.5e-05, Loss: 2720.8
+Epoch [1/30], Step [700/1283], LR 3.8e-05, Loss: 2618.3
+Epoch [1/30], Step [800/1283], LR 4.1e-05, Loss: 3241.8
+Epoch [1/30], Step [900/1283], LR 4.4e-05, Loss: 2658.1
+Epoch [1/30], Step [1000/1283], LR 4.7e-05, Loss: 2296.2
+Epoch [1/30], Step [1100/1283], LR 5.0e-05, Loss: 2429.2
+Epoch [1/30], Step [1200/1283], LR 5.3e-05, Loss: 2637.4
+starting validation
+mAP score regular 65.82, mAP score EMA 48.67
+F1 score regular 43.39, Precision regular 28.30, Recall regular 92.98, F1 score EMA 35.09, Precision EMA 22.03, Recall EMA86.20
+best model Saving successfully.
+current_F1 = 43.39, highest_F1 = 43.39
+
+Prior (train), first 5 classes: tensor([0.8587, 0.3165, 0.5287, 0.2589, 0.1898], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'bottle' 'handbag' 'bench' 'dining table'
+ 'backpack' 'cup' 'cell phone']
+Epoch [2/30], Step [000/1283], LR 5.6e-05, Loss: 3311.2
+Epoch [2/30], Step [100/1283], LR 5.9e-05, Loss: 2736.8
+Epoch [2/30], Step [200/1283], LR 6.3e-05, Loss: 2594.9
+Epoch [2/30], Step [300/1283], LR 6.7e-05, Loss: 2431.4
+Epoch [2/30], Step [400/1283], LR 7.0e-05, Loss: 2930.9
+Epoch [2/30], Step [500/1283], LR 7.4e-05, Loss: 2060.1
+Epoch [2/30], Step [600/1283], LR 7.8e-05, Loss: 2307.2
+Epoch [2/30], Step [700/1283], LR 8.1e-05, Loss: 2572.2
+Epoch [2/30], Step [800/1283], LR 8.5e-05, Loss: 2694.8
+Epoch [2/30], Step [900/1283], LR 8.9e-05, Loss: 2387.7
+Epoch [2/30], Step [1000/1283], LR 9.3e-05, Loss: 2333.7
+Epoch [2/30], Step [1100/1283], LR 9.7e-05, Loss: 2677.2
+Epoch [2/30], Step [1200/1283], LR 1.0e-04, Loss: 2243.6
+starting validation
+mAP score regular 70.21, mAP score EMA 63.50
+F1 score regular 48.92, Precision regular 33.27, Recall regular 92.42, F1 score EMA 43.47, Precision EMA 28.55, Recall EMA91.02
+best model Saving successfully.
+current_F1 = 48.92, highest_F1 = 48.92
+
+Prior (train), first 5 classes: tensor([0.8443, 0.2771, 0.4821, 0.2131, 0.1490], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'bottle' 'handbag' 'bench' 'dining table'
+ 'backpack' 'cup' 'cell phone']
+Epoch [3/30], Step [000/1283], LR 1.0e-04, Loss: 1758.2
+Epoch [3/30], Step [100/1283], LR 1.1e-04, Loss: 2474.0
+Epoch [3/30], Step [200/1283], LR 1.1e-04, Loss: 2363.7
+Epoch [3/30], Step [300/1283], LR 1.2e-04, Loss: 2180.8
+Epoch [3/30], Step [400/1283], LR 1.2e-04, Loss: 2409.8
+Epoch [3/30], Step [500/1283], LR 1.2e-04, Loss: 2067.7
+Epoch [3/30], Step [600/1283], LR 1.3e-04, Loss: 2407.7
+Epoch [3/30], Step [700/1283], LR 1.3e-04, Loss: 1838.2
+Epoch [3/30], Step [800/1283], LR 1.3e-04, Loss: 2493.0
+Epoch [3/30], Step [900/1283], LR 1.4e-04, Loss: 2448.9
+Epoch [3/30], Step [1000/1283], LR 1.4e-04, Loss: 2364.9
+Epoch [3/30], Step [1100/1283], LR 1.5e-04, Loss: 2172.3
+Epoch [3/30], Step [1200/1283], LR 1.5e-04, Loss: 2338.8
+starting validation
+mAP score regular 71.41, mAP score EMA 69.95
+F1 score regular 52.26, Precision regular 36.59, Recall regular 91.41, F1 score EMA 47.06, Precision EMA 31.54, Recall EMA92.63
+best model Saving successfully.
+current_F1 = 52.26, highest_F1 = 52.26
+
+Prior (train), first 5 classes: tensor([0.8316, 0.2519, 0.4490, 0.1862, 0.1273], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'bottle' 'handbag' 'bench' 'dining table' 'cup'
+ 'backpack' 'cell phone']
+Epoch [4/30], Step [000/1283], LR 1.5e-04, Loss: 1919.0
+Epoch [4/30], Step [100/1283], LR 1.6e-04, Loss: 2461.6
+Epoch [4/30], Step [200/1283], LR 1.6e-04, Loss: 2240.3
+Epoch [4/30], Step [300/1283], LR 1.6e-04, Loss: 1928.7
+Epoch [4/30], Step [400/1283], LR 1.6e-04, Loss: 2323.0
+Epoch [4/30], Step [500/1283], LR 1.7e-04, Loss: 1913.1
+Epoch [4/30], Step [600/1283], LR 1.7e-04, Loss: 2234.9
+Epoch [4/30], Step [700/1283], LR 1.7e-04, Loss: 2431.9
+Epoch [4/30], Step [800/1283], LR 1.8e-04, Loss: 2047.3
+Epoch [4/30], Step [900/1283], LR 1.8e-04, Loss: 2313.3
+Epoch [4/30], Step [1000/1283], LR 1.8e-04, Loss: 2443.9
+Epoch [4/30], Step [1100/1283], LR 1.8e-04, Loss: 1938.3
+Epoch [4/30], Step [1200/1283], LR 1.9e-04, Loss: 2504.1
+starting validation
+mAP score regular 71.59, mAP score EMA 73.43
+F1 score regular 51.77, Precision regular 36.12, Recall regular 91.34, F1 score EMA 49.39, Precision EMA 33.58, Recall EMA93.31
+current_F1 = 51.77, highest_F1 = 52.26
+
+Prior (train), first 5 classes: tensor([0.8213, 0.2331, 0.4268, 0.1690, 0.1138], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'bottle' 'handbag' 'bench' 'dining table' 'cup'
+ 'backpack' 'cell phone']
+Epoch [5/30], Step [000/1283], LR 1.9e-04, Loss: 1723.0
+Epoch [5/30], Step [100/1283], LR 1.9e-04, Loss: 1788.9
+Epoch [5/30], Step [200/1283], LR 1.9e-04, Loss: 1888.7
+Epoch [5/30], Step [300/1283], LR 1.9e-04, Loss: 2214.1
+Epoch [5/30], Step [400/1283], LR 1.9e-04, Loss: 1931.1
+Epoch [5/30], Step [500/1283], LR 2.0e-04, Loss: 2457.0
+Epoch [5/30], Step [600/1283], LR 2.0e-04, Loss: 1908.4
+Epoch [5/30], Step [700/1283], LR 2.0e-04, Loss: 2156.7
+Epoch [5/30], Step [800/1283], LR 2.0e-04, Loss: 2174.8
+Epoch [5/30], Step [900/1283], LR 2.0e-04, Loss: 2166.0
+Epoch [5/30], Step [1000/1283], LR 2.0e-04, Loss: 2188.7
+Epoch [5/30], Step [1100/1283], LR 2.0e-04, Loss: 2012.0
+Epoch [5/30], Step [1200/1283], LR 2.0e-04, Loss: 2030.4
+starting validation
+mAP score regular 71.51, mAP score EMA 75.30
+F1 score regular 53.66, Precision regular 38.18, Recall regular 90.30, F1 score EMA 51.12, Precision EMA 35.14, Recall EMA93.75
+best model Saving successfully.
+current_F1 = 53.66, highest_F1 = 53.66
+
+Prior (train), first 5 classes: tensor([0.8141, 0.2198, 0.4093, 0.1568, 0.1045], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'bottle' 'handbag' 'bench' 'dining table' 'cup'
+ 'backpack' 'cell phone']
+Epoch [6/30], Step [000/1283], LR 2.0e-04, Loss: 1949.7
+Epoch [6/30], Step [100/1283], LR 2.0e-04, Loss: 1495.9
+Epoch [6/30], Step [200/1283], LR 2.0e-04, Loss: 1853.6
+Epoch [6/30], Step [300/1283], LR 2.0e-04, Loss: 1651.1
+Epoch [6/30], Step [400/1283], LR 2.0e-04, Loss: 1878.5
+Epoch [6/30], Step [500/1283], LR 2.0e-04, Loss: 1721.5
+Epoch [6/30], Step [600/1283], LR 2.0e-04, Loss: 1713.9
+Epoch [6/30], Step [700/1283], LR 2.0e-04, Loss: 1722.6
+Epoch [6/30], Step [800/1283], LR 2.0e-04, Loss: 1879.6
+Epoch [6/30], Step [900/1283], LR 2.0e-04, Loss: 1719.1
+Epoch [6/30], Step [1000/1283], LR 2.0e-04, Loss: 2159.3
+Epoch [6/30], Step [1100/1283], LR 2.0e-04, Loss: 1754.1
+Epoch [6/30], Step [1200/1283], LR 2.0e-04, Loss: 2160.8
+starting validation
+mAP score regular 71.55, mAP score EMA 76.39
+F1 score regular 55.62, Precision regular 40.29, Recall regular 89.79, F1 score EMA 52.66, Precision EMA 36.60, Recall EMA93.81
+best model Saving successfully.
+current_F1 = 55.62, highest_F1 = 55.62
+
+Prior (train), first 5 classes: tensor([0.8071, 0.2080, 0.3946, 0.1482, 0.0969], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'bottle' 'handbag' 'dining table' 'bench' 'cup'
+ 'backpack' 'cell phone']
+Epoch [7/30], Step [000/1283], LR 2.0e-04, Loss: 1767.6
+Epoch [7/30], Step [100/1283], LR 2.0e-04, Loss: 1929.5
+Epoch [7/30], Step [200/1283], LR 2.0e-04, Loss: 2306.6
+Epoch [7/30], Step [300/1283], LR 2.0e-04, Loss: 1732.0
+Epoch [7/30], Step [400/1283], LR 2.0e-04, Loss: 1813.6
+Epoch [7/30], Step [500/1283], LR 2.0e-04, Loss: 1660.1
+Epoch [7/30], Step [600/1283], LR 2.0e-04, Loss: 1697.2
+Epoch [7/30], Step [700/1283], LR 2.0e-04, Loss: 1765.9
+Epoch [7/30], Step [800/1283], LR 2.0e-04, Loss: 1532.0
+Epoch [7/30], Step [900/1283], LR 2.0e-04, Loss: 2209.5
+Epoch [7/30], Step [1000/1283], LR 2.0e-04, Loss: 1932.3
+Epoch [7/30], Step [1100/1283], LR 2.0e-04, Loss: 1789.9
+Epoch [7/30], Step [1200/1283], LR 2.0e-04, Loss: 1770.0
+starting validation
+mAP score regular 71.17, mAP score EMA 76.88
+F1 score regular 55.70, Precision regular 40.40, Recall regular 89.66, F1 score EMA 54.38, Precision EMA 38.32, Recall EMA93.58
+best model Saving successfully.
+current_F1 = 55.70, highest_F1 = 55.70
+
+Prior (train), first 5 classes: tensor([0.8006, 0.1979, 0.3824, 0.1398, 0.0908], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'bottle' 'handbag' 'dining table' 'cup' 'bench'
+ 'backpack' 'cell phone']
+Epoch [8/30], Step [000/1283], LR 2.0e-04, Loss: 1575.7
+Epoch [8/30], Step [100/1283], LR 2.0e-04, Loss: 1566.2
+Epoch [8/30], Step [200/1283], LR 2.0e-04, Loss: 1565.6
+Epoch [8/30], Step [300/1283], LR 2.0e-04, Loss: 1946.9
+Epoch [8/30], Step [400/1283], LR 2.0e-04, Loss: 1596.9
+Epoch [8/30], Step [500/1283], LR 2.0e-04, Loss: 2062.8
+Epoch [8/30], Step [600/1283], LR 1.9e-04, Loss: 1487.7
+Epoch [8/30], Step [700/1283], LR 1.9e-04, Loss: 1611.7
+Epoch [8/30], Step [800/1283], LR 1.9e-04, Loss: 1743.6
+Epoch [8/30], Step [900/1283], LR 1.9e-04, Loss: 1795.9
+Epoch [8/30], Step [1000/1283], LR 1.9e-04, Loss: 1647.1
+Epoch [8/30], Step [1100/1283], LR 1.9e-04, Loss: 1642.9
+Epoch [8/30], Step [1200/1283], LR 1.9e-04, Loss: 1969.1
+starting validation
+mAP score regular 71.33, mAP score EMA 76.96
+F1 score regular 56.83, Precision regular 41.77, Recall regular 88.87, F1 score EMA 56.02, Precision EMA 40.05, Recall EMA93.18
+best model Saving successfully.
+current_F1 = 56.83, highest_F1 = 56.83
+
+Prior (train), first 5 classes: tensor([0.7940, 0.1894, 0.3708, 0.1333, 0.0860], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'bottle' 'handbag' 'dining table' 'cup' 'bench'
+ 'backpack' 'cell phone']
+Epoch [9/30], Step [000/1283], LR 1.9e-04, Loss: 1333.0
+Epoch [9/30], Step [100/1283], LR 1.9e-04, Loss: 1493.6
+Epoch [9/30], Step [200/1283], LR 1.9e-04, Loss: 1456.6
+Epoch [9/30], Step [300/1283], LR 1.9e-04, Loss: 1761.1
+Epoch [9/30], Step [400/1283], LR 1.9e-04, Loss: 1414.1
+Epoch [9/30], Step [500/1283], LR 1.9e-04, Loss: 1599.5
+Epoch [9/30], Step [600/1283], LR 1.9e-04, Loss: 2432.3
+Epoch [9/30], Step [700/1283], LR 1.9e-04, Loss: 1683.1
+Epoch [9/30], Step [800/1283], LR 1.9e-04, Loss: 1299.9
+Epoch [9/30], Step [900/1283], LR 1.9e-04, Loss: 1533.5
+Epoch [9/30], Step [1000/1283], LR 1.9e-04, Loss: 1492.5
+Epoch [9/30], Step [1100/1283], LR 1.9e-04, Loss: 1611.9
+Epoch [9/30], Step [1200/1283], LR 1.9e-04, Loss: 1429.7
+starting validation
+mAP score regular 71.26, mAP score EMA 76.96
+F1 score regular 59.99, Precision regular 45.51, Recall regular 87.98, F1 score EMA 57.70, Precision EMA 41.90, Recall EMA92.60
+best model Saving successfully.
+current_F1 = 59.99, highest_F1 = 59.99
+
+Prior (train), first 5 classes: tensor([0.7880, 0.1814, 0.3604, 0.1273, 0.0818], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'bottle' 'handbag' 'dining table' 'cup' 'bench'
+ 'backpack' 'cell phone']
+Epoch [10/30], Step [000/1283], LR 1.9e-04, Loss: 1695.8
+Epoch [10/30], Step [100/1283], LR 1.9e-04, Loss: 1354.8
+Epoch [10/30], Step [200/1283], LR 1.9e-04, Loss: 1455.1
+Epoch [10/30], Step [300/1283], LR 1.9e-04, Loss: 1411.3
+Epoch [10/30], Step [400/1283], LR 1.8e-04, Loss: 1655.5
+Epoch [10/30], Step [500/1283], LR 1.8e-04, Loss: 1276.3
+Epoch [10/30], Step [600/1283], LR 1.8e-04, Loss: 1899.1
+Epoch [10/30], Step [700/1283], LR 1.8e-04, Loss: 1501.4
+Epoch [10/30], Step [800/1283], LR 1.8e-04, Loss: 1071.5
+Epoch [10/30], Step [900/1283], LR 1.8e-04, Loss: 1644.7
+Epoch [10/30], Step [1000/1283], LR 1.8e-04, Loss: 1766.6
+Epoch [10/30], Step [1100/1283], LR 1.8e-04, Loss: 1186.0
+Epoch [10/30], Step [1200/1283], LR 1.8e-04, Loss: 1741.3
+starting validation
+mAP score regular 70.74, mAP score EMA 76.72
+F1 score regular 60.50, Precision regular 46.36, Recall regular 87.04, F1 score EMA 59.18, Precision EMA 43.63, Recall EMA91.96
+best model Saving successfully.
+current_F1 = 60.50, highest_F1 = 60.50
+
+Prior (train), first 5 classes: tensor([0.7820, 0.1740, 0.3505, 0.1227, 0.0782], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'bottle' 'handbag' 'dining table' 'cup' 'bench'
+ 'backpack' 'cell phone']
+Epoch [11/30], Step [000/1283], LR 1.8e-04, Loss: 1415.4
+Epoch [11/30], Step [100/1283], LR 1.8e-04, Loss: 1098.2
+Epoch [11/30], Step [200/1283], LR 1.8e-04, Loss: 1267.0
+Epoch [11/30], Step [300/1283], LR 1.8e-04, Loss: 1111.5
+Epoch [11/30], Step [400/1283], LR 1.8e-04, Loss: 1469.4
+Epoch [11/30], Step [500/1283], LR 1.8e-04, Loss: 1515.1
+Epoch [11/30], Step [600/1283], LR 1.8e-04, Loss: 1891.7
+Epoch [11/30], Step [700/1283], LR 1.7e-04, Loss: 1431.6
+Epoch [11/30], Step [800/1283], LR 1.7e-04, Loss: 1342.4
+Epoch [11/30], Step [900/1283], LR 1.7e-04, Loss: 1698.2
+Epoch [11/30], Step [1000/1283], LR 1.7e-04, Loss: 1698.6
+Epoch [11/30], Step [1100/1283], LR 1.7e-04, Loss: 1198.5
+Epoch [11/30], Step [1200/1283], LR 1.7e-04, Loss: 1407.0
+starting validation
+mAP score regular 70.67, mAP score EMA 76.43
+F1 score regular 63.33, Precision regular 50.43, Recall regular 85.09, F1 score EMA 60.76, Precision EMA 45.53, Recall EMA91.29
+best model Saving successfully.
+current_F1 = 63.33, highest_F1 = 63.33
+
+Prior (train), first 5 classes: tensor([0.7766, 0.1674, 0.3413, 0.1183, 0.0749], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'bottle' 'dining table' 'handbag' 'cup' 'bench'
+ 'backpack' 'cell phone']
+Epoch [12/30], Step [000/1283], LR 1.7e-04, Loss: 1485.9
+Epoch [12/30], Step [100/1283], LR 1.7e-04, Loss: 1263.0
+Epoch [12/30], Step [200/1283], LR 1.7e-04, Loss: 1311.1
+Epoch [12/30], Step [300/1283], LR 1.7e-04, Loss: 1292.8
+Epoch [12/30], Step [400/1283], LR 1.7e-04, Loss: 1208.3
+Epoch [12/30], Step [500/1283], LR 1.7e-04, Loss: 1683.6
+Epoch [12/30], Step [600/1283], LR 1.7e-04, Loss: 1455.7
+Epoch [12/30], Step [700/1283], LR 1.7e-04, Loss: 1531.6
+Epoch [12/30], Step [800/1283], LR 1.6e-04, Loss: 1115.8
+Epoch [12/30], Step [900/1283], LR 1.6e-04, Loss: 1853.0
+Epoch [12/30], Step [1000/1283], LR 1.6e-04, Loss: 1399.4
+Epoch [12/30], Step [1100/1283], LR 1.6e-04, Loss: 1700.1
+Epoch [12/30], Step [1200/1283], LR 1.6e-04, Loss: 1307.9
+starting validation
+mAP score regular 70.88, mAP score EMA 76.11
+F1 score regular 64.43, Precision regular 52.20, Recall regular 84.15, F1 score EMA 62.28, Precision EMA 47.50, Recall EMA90.44
+best model Saving successfully.
+current_F1 = 64.43, highest_F1 = 64.43
+
+Prior (train), first 5 classes: tensor([0.7711, 0.1616, 0.3327, 0.1140, 0.0720], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'bottle' 'dining table' 'handbag' 'cup' 'bench'
+ 'backpack' 'cell phone']
+Epoch [13/30], Step [000/1283], LR 1.6e-04, Loss: 1234.5
+Epoch [13/30], Step [100/1283], LR 1.6e-04, Loss: 1539.2
+Epoch [13/30], Step [200/1283], LR 1.6e-04, Loss: 1218.1
+Epoch [13/30], Step [300/1283], LR 1.6e-04, Loss: 1758.9
+Epoch [13/30], Step [400/1283], LR 1.6e-04, Loss: 1368.1
+Epoch [13/30], Step [500/1283], LR 1.6e-04, Loss: 1247.6
+Epoch [13/30], Step [600/1283], LR 1.6e-04, Loss: 1732.2
+Epoch [13/30], Step [700/1283], LR 1.6e-04, Loss: 1373.5
+Epoch [13/30], Step [800/1283], LR 1.5e-04, Loss: 1216.7
+Epoch [13/30], Step [900/1283], LR 1.5e-04, Loss: 1213.3
+Epoch [13/30], Step [1000/1283], LR 1.5e-04, Loss: 1412.3
+Epoch [13/30], Step [1100/1283], LR 1.5e-04, Loss: 1593.0
+Epoch [13/30], Step [1200/1283], LR 1.5e-04, Loss: 1503.3
+starting validation
+mAP score regular 70.60, mAP score EMA 75.79
+F1 score regular 65.43, Precision regular 54.11, Recall regular 82.76, F1 score EMA 63.68, Precision EMA 49.39, Recall EMA89.59
+best model Saving successfully.
+current_F1 = 65.43, highest_F1 = 65.43
+
+Prior (train), first 5 classes: tensor([0.7659, 0.1560, 0.3254, 0.1101, 0.0696], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'bottle' 'dining table' 'cup' 'handbag' 'bench'
+ 'backpack' 'cell phone']
+Epoch [14/30], Step [000/1283], LR 1.5e-04, Loss: 1267.0
+Epoch [14/30], Step [100/1283], LR 1.5e-04, Loss: 1289.7
+Epoch [14/30], Step [200/1283], LR 1.5e-04, Loss: 2061.7
+Epoch [14/30], Step [300/1283], LR 1.5e-04, Loss: 1793.3
+Epoch [14/30], Step [400/1283], LR 1.5e-04, Loss: 1096.4
+Epoch [14/30], Step [500/1283], LR 1.5e-04, Loss: 1030.8
+Epoch [14/30], Step [600/1283], LR 1.4e-04, Loss: 1553.0
+Epoch [14/30], Step [700/1283], LR 1.4e-04, Loss: 1470.7
+Epoch [14/30], Step [800/1283], LR 1.4e-04, Loss: 1116.1
+Epoch [14/30], Step [900/1283], LR 1.4e-04, Loss: 1004.5
+Epoch [14/30], Step [1000/1283], LR 1.4e-04, Loss: 1240.0
+Epoch [14/30], Step [1100/1283], LR 1.4e-04, Loss: 1083.2
+Epoch [14/30], Step [1200/1283], LR 1.4e-04, Loss: 1008.4
+starting validation
+mAP score regular 70.58, mAP score EMA 75.33
+F1 score regular 68.24, Precision regular 59.63, Recall regular 79.75, F1 score EMA 65.11, Precision EMA 51.52, Recall EMA88.44
+best model Saving successfully.
+current_F1 = 68.24, highest_F1 = 68.24
+
+Prior (train), first 5 classes: tensor([0.7610, 0.1508, 0.3181, 0.1063, 0.0672], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'bottle' 'dining table' 'cup' 'handbag' 'bench'
+ 'backpack' 'bowl']
+Epoch [15/30], Step [000/1283], LR 1.4e-04, Loss: 1324.2
+Epoch [15/30], Step [100/1283], LR 1.4e-04, Loss: 1344.6
+Epoch [15/30], Step [200/1283], LR 1.4e-04, Loss: 1048.2
+Epoch [15/30], Step [300/1283], LR 1.4e-04, Loss: 1198.0
+Epoch [15/30], Step [400/1283], LR 1.3e-04, Loss: 1042.8
+Epoch [15/30], Step [500/1283], LR 1.3e-04, Loss: 1091.0
+Epoch [15/30], Step [600/1283], LR 1.3e-04, Loss: 1721.2
+Epoch [15/30], Step [700/1283], LR 1.3e-04, Loss: 1385.6
+Epoch [15/30], Step [800/1283], LR 1.3e-04, Loss: 1095.1
+Epoch [15/30], Step [900/1283], LR 1.3e-04, Loss: 1265.7
+Epoch [15/30], Step [1000/1283], LR 1.3e-04, Loss: 1072.3
+Epoch [15/30], Step [1100/1283], LR 1.3e-04, Loss: 1494.7
+Epoch [15/30], Step [1200/1283], LR 1.3e-04, Loss: 1112.7
+starting validation
+mAP score regular 70.68, mAP score EMA 74.98
+F1 score regular 68.35, Precision regular 59.76, Recall regular 79.82, F1 score EMA 66.45, Precision EMA 53.67, Recall EMA87.22
+best model Saving successfully.
+current_F1 = 68.35, highest_F1 = 68.35
+
+Prior (train), first 5 classes: tensor([0.7564, 0.1457, 0.3111, 0.1029, 0.0650], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'bottle' 'dining table' 'cup' 'handbag' 'backpack'
+ 'bench' 'bowl']
+Epoch [16/30], Step [000/1283], LR 1.3e-04, Loss: 1077.6
+Epoch [16/30], Step [100/1283], LR 1.2e-04, Loss: 925.6
+Epoch [16/30], Step [200/1283], LR 1.2e-04, Loss: 1266.5
+Epoch [16/30], Step [300/1283], LR 1.2e-04, Loss: 1287.2
+Epoch [16/30], Step [400/1283], LR 1.2e-04, Loss: 1418.1
+Epoch [16/30], Step [500/1283], LR 1.2e-04, Loss: 1078.1
+Epoch [16/30], Step [600/1283], LR 1.2e-04, Loss: 950.1
+Epoch [16/30], Step [700/1283], LR 1.2e-04, Loss: 1242.9
+Epoch [16/30], Step [800/1283], LR 1.2e-04, Loss: 867.6
+Epoch [16/30], Step [900/1283], LR 1.2e-04, Loss: 1311.6
+Epoch [16/30], Step [1000/1283], LR 1.2e-04, Loss: 1014.8
+Epoch [16/30], Step [1100/1283], LR 1.1e-04, Loss: 1216.7
+Epoch [16/30], Step [1200/1283], LR 1.1e-04, Loss: 1460.9
+starting validation
+mAP score regular 70.55, mAP score EMA 74.54
+F1 score regular 69.04, Precision regular 61.50, Recall regular 78.68, F1 score EMA 67.71, Precision EMA 55.90, Recall EMA85.85
+best model Saving successfully.
+current_F1 = 69.04, highest_F1 = 69.04
+
+Prior (train), first 5 classes: tensor([0.7513, 0.1411, 0.3045, 0.0997, 0.0630], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'bottle' 'dining table' 'cup' 'handbag' 'backpack'
+ 'bench' 'bowl']
+Epoch [17/30], Step [000/1283], LR 1.1e-04, Loss: 1113.4
+Epoch [17/30], Step [100/1283], LR 1.1e-04, Loss: 770.5
+Epoch [17/30], Step [200/1283], LR 1.1e-04, Loss: 1093.9
+Epoch [17/30], Step [300/1283], LR 1.1e-04, Loss: 1151.1
+Epoch [17/30], Step [400/1283], LR 1.1e-04, Loss: 1052.5
+Epoch [17/30], Step [500/1283], LR 1.1e-04, Loss: 1052.4
+Epoch [17/30], Step [600/1283], LR 1.1e-04, Loss: 881.0
+Epoch [17/30], Step [700/1283], LR 1.1e-04, Loss: 1032.8
+Epoch [17/30], Step [800/1283], LR 1.0e-04, Loss: 1061.2
+Epoch [17/30], Step [900/1283], LR 1.0e-04, Loss: 955.1
+Epoch [17/30], Step [1000/1283], LR 1.0e-04, Loss: 975.5
+Epoch [17/30], Step [1100/1283], LR 1.0e-04, Loss: 1268.0
+Epoch [17/30], Step [1200/1283], LR 1.0e-04, Loss: 1061.7
+starting validation
+mAP score regular 70.30, mAP score EMA 74.08
+F1 score regular 70.61, Precision regular 66.35, Recall regular 75.44, F1 score EMA 68.96, Precision EMA 58.36, Recall EMA84.26
+best model Saving successfully.
+current_F1 = 70.61, highest_F1 = 70.61
+
+Prior (train), first 5 classes: tensor([0.7464, 0.1366, 0.2982, 0.0967, 0.0612], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'bottle' 'dining table' 'cup' 'handbag' 'backpack'
+ 'bench' 'bowl']
+Epoch [18/30], Step [000/1283], LR 1.0e-04, Loss: 959.5
+Epoch [18/30], Step [100/1283], LR 9.9e-05, Loss: 1150.8
+Epoch [18/30], Step [200/1283], LR 9.8e-05, Loss: 777.9
+Epoch [18/30], Step [300/1283], LR 9.7e-05, Loss: 791.8
+Epoch [18/30], Step [400/1283], LR 9.6e-05, Loss: 1010.4
+Epoch [18/30], Step [500/1283], LR 9.5e-05, Loss: 792.3
+Epoch [18/30], Step [600/1283], LR 9.4e-05, Loss: 983.8
+Epoch [18/30], Step [700/1283], LR 9.3e-05, Loss: 976.0
+Epoch [18/30], Step [800/1283], LR 9.2e-05, Loss: 974.9
+Epoch [18/30], Step [900/1283], LR 9.1e-05, Loss: 890.1
+Epoch [18/30], Step [1000/1283], LR 9.0e-05, Loss: 774.5
+Epoch [18/30], Step [1100/1283], LR 8.9e-05, Loss: 835.1
+Epoch [18/30], Step [1200/1283], LR 8.8e-05, Loss: 924.3
+starting validation
+mAP score regular 70.28, mAP score EMA 73.59
+F1 score regular 70.50, Precision regular 67.22, Recall regular 74.11, F1 score EMA 69.99, Precision EMA 60.74, Recall EMA82.56
+current_F1 = 70.50, highest_F1 = 70.61
+
+Prior (train), first 5 classes: tensor([0.7414, 0.1323, 0.2921, 0.0938, 0.0595], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'bottle' 'dining table' 'cup' 'handbag' 'backpack'
+ 'bench' 'bowl']
+Epoch [19/30], Step [000/1283], LR 8.7e-05, Loss: 809.0
+Epoch [19/30], Step [100/1283], LR 8.6e-05, Loss: 713.3
+Epoch [19/30], Step [200/1283], LR 8.5e-05, Loss: 787.2
+Epoch [19/30], Step [300/1283], LR 8.4e-05, Loss: 883.9
+Epoch [19/30], Step [400/1283], LR 8.3e-05, Loss: 822.8
+Epoch [19/30], Step [500/1283], LR 8.2e-05, Loss: 958.9
+Epoch [19/30], Step [600/1283], LR 8.1e-05, Loss: 758.7
+Epoch [19/30], Step [700/1283], LR 8.0e-05, Loss: 852.2
+Epoch [19/30], Step [800/1283], LR 7.9e-05, Loss: 799.5
+Epoch [19/30], Step [900/1283], LR 7.8e-05, Loss: 931.4
+Epoch [19/30], Step [1000/1283], LR 7.7e-05, Loss: 929.9
+Epoch [19/30], Step [1100/1283], LR 7.6e-05, Loss: 991.6
+Epoch [19/30], Step [1200/1283], LR 7.5e-05, Loss: 914.5
+starting validation
+mAP score regular 69.75, mAP score EMA 73.10
+F1 score regular 70.50, Precision regular 68.81, Recall regular 72.28, F1 score EMA 70.77, Precision EMA 62.94, Recall EMA80.83
+current_F1 = 70.50, highest_F1 = 70.61
+
+Prior (train), first 5 classes: tensor([0.7366, 0.1283, 0.2862, 0.0912, 0.0580], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'bottle' 'dining table' 'cup' 'handbag' 'backpack'
+ 'bench' 'bowl']
+Epoch [20/30], Step [000/1283], LR 7.4e-05, Loss: 1029.4
+Epoch [20/30], Step [100/1283], LR 7.3e-05, Loss: 914.0
+Epoch [20/30], Step [200/1283], LR 7.2e-05, Loss: 776.2
+Epoch [20/30], Step [300/1283], LR 7.1e-05, Loss: 796.7
+Epoch [20/30], Step [400/1283], LR 7.0e-05, Loss: 952.6
+Epoch [20/30], Step [500/1283], LR 6.9e-05, Loss: 998.0
+Epoch [20/30], Step [600/1283], LR 6.8e-05, Loss: 718.2
+Epoch [20/30], Step [700/1283], LR 6.7e-05, Loss: 853.8
+Epoch [20/30], Step [800/1283], LR 6.6e-05, Loss: 998.1
+Epoch [20/30], Step [900/1283], LR 6.5e-05, Loss: 848.5
+Epoch [20/30], Step [1000/1283], LR 6.4e-05, Loss: 682.7
+Epoch [20/30], Step [1100/1283], LR 6.3e-05, Loss: 889.5
+Epoch [20/30], Step [1200/1283], LR 6.2e-05, Loss: 1274.0
+starting validation
+mAP score regular 69.92, mAP score EMA 72.55
+F1 score regular 71.10, Precision regular 72.80, Recall regular 69.47, F1 score EMA 71.45, Precision EMA 65.42, Recall EMA78.72
+best model Saving successfully.
+current_F1 = 71.10, highest_F1 = 71.10
+
+Prior (train), first 5 classes: tensor([0.7316, 0.1243, 0.2805, 0.0886, 0.0566], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'bottle' 'dining table' 'cup' 'handbag' 'backpack'
+ 'bench' 'bowl']
+Epoch [21/30], Step [000/1283], LR 6.2e-05, Loss: 832.9
+Epoch [21/30], Step [100/1283], LR 6.1e-05, Loss: 873.1
+Epoch [21/30], Step [200/1283], LR 6.0e-05, Loss: 1433.1
+Epoch [21/30], Step [300/1283], LR 5.9e-05, Loss: 707.1
+Epoch [21/30], Step [400/1283], LR 5.8e-05, Loss: 781.4
+Epoch [21/30], Step [500/1283], LR 5.7e-05, Loss: 849.7
+Epoch [21/30], Step [600/1283], LR 5.6e-05, Loss: 901.1
+Epoch [21/30], Step [700/1283], LR 5.5e-05, Loss: 881.6
+Epoch [21/30], Step [800/1283], LR 5.4e-05, Loss: 987.1
+Epoch [21/30], Step [900/1283], LR 5.3e-05, Loss: 926.0
+Epoch [21/30], Step [1000/1283], LR 5.3e-05, Loss: 615.5
+Epoch [21/30], Step [1100/1283], LR 5.2e-05, Loss: 764.8
+Epoch [21/30], Step [1200/1283], LR 5.1e-05, Loss: 774.4
+starting validation
+mAP score regular 69.36, mAP score EMA 72.10
+F1 score regular 70.26, Precision regular 73.32, Recall regular 67.44, F1 score EMA 71.86, Precision EMA 67.65, Recall EMA76.63
+current_F1 = 70.26, highest_F1 = 71.10
+
+Prior (train), first 5 classes: tensor([0.7268, 0.1209, 0.2748, 0.0861, 0.0554], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'dining table' 'bottle' 'cup' 'handbag' 'backpack'
+ 'bench' 'bowl']
+Epoch [22/30], Step [000/1283], LR 5.0e-05, Loss: 667.4
+Epoch [22/30], Step [100/1283], LR 4.9e-05, Loss: 833.6
+Epoch [22/30], Step [200/1283], LR 4.8e-05, Loss: 694.3
+Epoch [22/30], Step [300/1283], LR 4.7e-05, Loss: 696.4
+Epoch [22/30], Step [400/1283], LR 4.6e-05, Loss: 792.1
+Epoch [22/30], Step [500/1283], LR 4.6e-05, Loss: 651.2
+Epoch [22/30], Step [600/1283], LR 4.5e-05, Loss: 735.2
+Epoch [22/30], Step [700/1283], LR 4.4e-05, Loss: 829.5
+Epoch [22/30], Step [800/1283], LR 4.3e-05, Loss: 713.2
+Epoch [22/30], Step [900/1283], LR 4.2e-05, Loss: 758.9
+Epoch [22/30], Step [1000/1283], LR 4.1e-05, Loss: 707.6
+Epoch [22/30], Step [1100/1283], LR 4.1e-05, Loss: 985.3
+Epoch [22/30], Step [1200/1283], LR 4.0e-05, Loss: 929.1
+starting validation
+mAP score regular 69.95, mAP score EMA 71.69
+F1 score regular 70.97, Precision regular 75.58, Recall regular 66.89, F1 score EMA 72.06, Precision EMA 69.78, Recall EMA74.50
+current_F1 = 70.97, highest_F1 = 71.10
+
+Prior (train), first 5 classes: tensor([0.7221, 0.1174, 0.2692, 0.0839, 0.0541], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'dining table' 'bottle' 'cup' 'handbag' 'backpack'
+ 'bench' 'bowl']
+Epoch [23/30], Step [000/1283], LR 3.9e-05, Loss: 700.2
+Epoch [23/30], Step [100/1283], LR 3.8e-05, Loss: 1157.7
+Epoch [23/30], Step [200/1283], LR 3.8e-05, Loss: 785.9
+Epoch [23/30], Step [300/1283], LR 3.7e-05, Loss: 713.6
+Epoch [23/30], Step [400/1283], LR 3.6e-05, Loss: 709.5
+Epoch [23/30], Step [500/1283], LR 3.5e-05, Loss: 590.8
+Epoch [23/30], Step [600/1283], LR 3.4e-05, Loss: 631.8
+Epoch [23/30], Step [700/1283], LR 3.4e-05, Loss: 717.1
+Epoch [23/30], Step [800/1283], LR 3.3e-05, Loss: 614.7
+Epoch [23/30], Step [900/1283], LR 3.2e-05, Loss: 628.0
+Epoch [23/30], Step [1000/1283], LR 3.1e-05, Loss: 878.4
+Epoch [23/30], Step [1100/1283], LR 3.1e-05, Loss: 634.2
+Epoch [23/30], Step [1200/1283], LR 3.0e-05, Loss: 627.0
+starting validation
+mAP score regular 69.50, mAP score EMA 71.26
+F1 score regular 70.38, Precision regular 77.19, Recall regular 64.67, F1 score EMA 72.01, Precision EMA 71.75, Recall EMA72.27
+current_F1 = 70.38, highest_F1 = 71.10
+
+Prior (train), first 5 classes: tensor([0.7173, 0.1141, 0.2639, 0.0818, 0.0530], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'dining table' 'bottle' 'cup' 'handbag' 'backpack'
+ 'bench' 'bowl']
+Epoch [24/30], Step [000/1283], LR 2.9e-05, Loss: 690.9
+Epoch [24/30], Step [100/1283], LR 2.9e-05, Loss: 588.8
+Epoch [24/30], Step [200/1283], LR 2.8e-05, Loss: 746.4
+Epoch [24/30], Step [300/1283], LR 2.7e-05, Loss: 964.7
+Epoch [24/30], Step [400/1283], LR 2.6e-05, Loss: 614.0
+Epoch [24/30], Step [500/1283], LR 2.6e-05, Loss: 655.0
+Epoch [24/30], Step [600/1283], LR 2.5e-05, Loss: 780.9
+Epoch [24/30], Step [700/1283], LR 2.4e-05, Loss: 776.9
+Epoch [24/30], Step [800/1283], LR 2.4e-05, Loss: 644.8
+Epoch [24/30], Step [900/1283], LR 2.3e-05, Loss: 729.4
+Epoch [24/30], Step [1000/1283], LR 2.2e-05, Loss: 784.8
+Epoch [24/30], Step [1100/1283], LR 2.2e-05, Loss: 822.8
+Epoch [24/30], Step [1200/1283], LR 2.1e-05, Loss: 780.8
+starting validation
+mAP score regular 69.26, mAP score EMA 70.84
+F1 score regular 69.90, Precision regular 77.37, Recall regular 63.75, F1 score EMA 71.80, Precision EMA 73.66, Recall EMA70.03
+current_F1 = 69.90, highest_F1 = 71.10
+
+Prior (train), first 5 classes: tensor([0.7126, 0.1110, 0.2589, 0.0797, 0.0519], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'dining table' 'bottle' 'cup' 'handbag' 'backpack'
+ 'bench' 'bowl']
+Epoch [25/30], Step [000/1283], LR 2.1e-05, Loss: 609.4
+Epoch [25/30], Step [100/1283], LR 2.0e-05, Loss: 804.5
+Epoch [25/30], Step [200/1283], LR 1.9e-05, Loss: 668.1
+Epoch [25/30], Step [300/1283], LR 1.9e-05, Loss: 712.8
+Epoch [25/30], Step [400/1283], LR 1.8e-05, Loss: 582.0
+Epoch [25/30], Step [500/1283], LR 1.8e-05, Loss: 779.9
+Epoch [25/30], Step [600/1283], LR 1.7e-05, Loss: 520.8
+Epoch [25/30], Step [700/1283], LR 1.7e-05, Loss: 802.1
+Epoch [25/30], Step [800/1283], LR 1.6e-05, Loss: 924.8
+Epoch [25/30], Step [900/1283], LR 1.5e-05, Loss: 646.2
+Epoch [25/30], Step [1000/1283], LR 1.5e-05, Loss: 665.1
+Epoch [25/30], Step [1100/1283], LR 1.4e-05, Loss: 604.4
+Epoch [25/30], Step [1200/1283], LR 1.4e-05, Loss: 771.3
+starting validation
+mAP score regular 69.09, mAP score EMA 70.42
+F1 score regular 69.02, Precision regular 80.30, Recall regular 60.52, F1 score EMA 71.40, Precision EMA 75.31, Recall EMA67.88
+current_F1 = 69.02, highest_F1 = 71.10
+
+Prior (train), first 5 classes: tensor([0.7083, 0.1081, 0.2541, 0.0778, 0.0509], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'dining table' 'bottle' 'cup' 'handbag' 'backpack'
+ 'bench' 'bowl']
+Epoch [26/30], Step [000/1283], LR 1.3e-05, Loss: 693.0
+Epoch [26/30], Step [100/1283], LR 1.3e-05, Loss: 799.6
+Epoch [26/30], Step [200/1283], LR 1.2e-05, Loss: 787.3
+Epoch [26/30], Step [300/1283], LR 1.2e-05, Loss: 735.8
+Epoch [26/30], Step [400/1283], LR 1.1e-05, Loss: 939.3
+Epoch [26/30], Step [500/1283], LR 1.1e-05, Loss: 659.2
+Epoch [26/30], Step [600/1283], LR 1.0e-05, Loss: 559.4
+Epoch [26/30], Step [700/1283], LR 1.0e-05, Loss: 568.4
+Epoch [26/30], Step [800/1283], LR 9.6e-06, Loss: 696.4
+Epoch [26/30], Step [900/1283], LR 9.2e-06, Loss: 598.8
+Epoch [26/30], Step [1000/1283], LR 8.7e-06, Loss: 524.1
+Epoch [26/30], Step [1100/1283], LR 8.3e-06, Loss: 967.2
+Epoch [26/30], Step [1200/1283], LR 7.9e-06, Loss: 647.8
+starting validation
+mAP score regular 69.09, mAP score EMA 70.11
+F1 score regular 69.19, Precision regular 79.48, Recall regular 61.26, F1 score EMA 71.00, Precision EMA 76.84, Recall EMA65.99
+current_F1 = 69.19, highest_F1 = 71.10
+
+Prior (train), first 5 classes: tensor([0.7041, 0.1054, 0.2496, 0.0760, 0.0500], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'dining table' 'bottle' 'cup' 'handbag' 'backpack'
+ 'bench' 'bowl']
+Epoch [27/30], Step [000/1283], LR 7.6e-06, Loss: 568.4
+Epoch [27/30], Step [100/1283], LR 7.2e-06, Loss: 513.0
+Epoch [27/30], Step [200/1283], LR 6.8e-06, Loss: 546.6
+Epoch [27/30], Step [300/1283], LR 6.5e-06, Loss: 735.8
+Epoch [27/30], Step [400/1283], LR 6.1e-06, Loss: 559.4
+Epoch [27/30], Step [500/1283], LR 5.8e-06, Loss: 455.2
+Epoch [27/30], Step [600/1283], LR 5.4e-06, Loss: 553.8
+Epoch [27/30], Step [700/1283], LR 5.1e-06, Loss: 835.5
+Epoch [27/30], Step [800/1283], LR 4.8e-06, Loss: 575.4
+Epoch [27/30], Step [900/1283], LR 4.5e-06, Loss: 539.2
+Epoch [27/30], Step [1000/1283], LR 4.2e-06, Loss: 956.9
+Epoch [27/30], Step [1100/1283], LR 3.9e-06, Loss: 555.9
+Epoch [27/30], Step [1200/1283], LR 3.6e-06, Loss: 827.7
+starting validation
+mAP score regular 68.77, mAP score EMA 69.81
+F1 score regular 68.71, Precision regular 79.84, Recall regular 60.31, F1 score EMA 70.44, Precision EMA 77.97, Recall EMA64.24
+current_F1 = 68.71, highest_F1 = 71.10
+
+Prior (train), first 5 classes: tensor([0.6999, 0.1028, 0.2452, 0.0743, 0.0491], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'dining table' 'bottle' 'cup' 'handbag' 'backpack'
+ 'bench' 'bowl']
+Epoch [28/30], Step [000/1283], LR 3.4e-06, Loss: 743.0
+Epoch [28/30], Step [100/1283], LR 3.1e-06, Loss: 608.8
+Epoch [28/30], Step [200/1283], LR 2.9e-06, Loss: 738.9
+Epoch [28/30], Step [300/1283], LR 2.7e-06, Loss: 614.4
+Epoch [28/30], Step [400/1283], LR 2.4e-06, Loss: 565.1
+Epoch [28/30], Step [500/1283], LR 2.2e-06, Loss: 562.4
+Epoch [28/30], Step [600/1283], LR 2.0e-06, Loss: 703.1
+Epoch [28/30], Step [700/1283], LR 1.8e-06, Loss: 596.1
+Epoch [28/30], Step [800/1283], LR 1.6e-06, Loss: 630.2
+Epoch [28/30], Step [900/1283], LR 1.4e-06, Loss: 598.5
+Epoch [28/30], Step [1000/1283], LR 1.3e-06, Loss: 629.7
+Epoch [28/30], Step [1100/1283], LR 1.1e-06, Loss: 672.7
+Epoch [28/30], Step [1200/1283], LR 9.7e-07, Loss: 481.2
+starting validation
+mAP score regular 68.91, mAP score EMA 69.53
+F1 score regular 68.38, Precision regular 80.85, Recall regular 59.24, F1 score EMA 69.94, Precision EMA 78.79, Recall EMA62.87
+current_F1 = 68.38, highest_F1 = 71.10
+
+Prior (train), first 5 classes: tensor([0.6962, 0.1004, 0.2411, 0.0727, 0.0483], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'dining table' 'bottle' 'cup' 'handbag' 'backpack'
+ 'bench' 'bowl']
+Epoch [29/30], Step [000/1283], LR 8.5e-07, Loss: 482.4
+Epoch [29/30], Step [100/1283], LR 7.3e-07, Loss: 490.9
+Epoch [29/30], Step [200/1283], LR 6.1e-07, Loss: 750.6
+Epoch [29/30], Step [300/1283], LR 5.0e-07, Loss: 617.3
+Epoch [29/30], Step [400/1283], LR 4.0e-07, Loss: 964.3
+Epoch [29/30], Step [500/1283], LR 3.2e-07, Loss: 497.3
+Epoch [29/30], Step [600/1283], LR 2.4e-07, Loss: 529.3
+Epoch [29/30], Step [700/1283], LR 1.8e-07, Loss: 525.6
+Epoch [29/30], Step [800/1283], LR 1.2e-07, Loss: 454.6
+Epoch [29/30], Step [900/1283], LR 7.6e-08, Loss: 785.4
+Epoch [29/30], Step [1000/1283], LR 4.2e-08, Loss: 443.1
+Epoch [29/30], Step [1100/1283], LR 1.8e-08, Loss: 549.3
+Epoch [29/30], Step [1200/1283], LR 4.2e-09, Loss: 661.0
+starting validation
+wandb: Waiting for W&B process to finish... (success).
+wandb: 
+wandb: Run history:
+wandb:  BCE_loss █▅▃▄▄▃▄▃▄▃▂▃▂▃▂▂▂▃▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  F1 score ▁▂▄▄▄▅▅▅▅▆▆▆▇▇▇▇████████████▇▇
+wandb: Precision ▁▂▂▃▃▃▃▃▃▄▄▄▅▅▅▅▆▆▆▇▇▇▇███████
+wandb:    Recall ▇████▇▇▇▇▇▇▆▆▆▅▅▅▄▄▄▃▃▃▂▂▁▁▁▁▁
+wandb:       mAP ▁▆▇██████████████▇▇▇▇▇▇▇▇▇▇▇▇▇
+wandb: 
+wandb: Run summary:
+wandb:  BCE_loss 257.75494
+wandb:  F1 score 68.29909
+wandb: Precision 80.83986
+wandb:    Recall 59.1267
+wandb:       mAP 68.82656
+wandb: 
+wandb: 🚀 View run train__lrsd_rpneg_base_bce_posWeight0.8 at: https://wandb.ai/zhangshichuan/base_bce_posWeight/runs/owcm08kd
+wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20230928_050639-owcm08kd/logs
+mAP score regular 68.83, mAP score EMA 69.34
+F1 score regular 68.30, Precision regular 80.84, Recall regular 59.13, F1 score EMA 69.54, Precision EMA 79.37, Recall EMA61.88
+current_F1 = 68.30, highest_F1 = 71.10
+
+Prior (train), first 5 classes: tensor([0.6926, 0.0981, 0.2374, 0.0712, 0.0475], device='cuda:0')
+Prior (train), first 10 classes: ['person' 'chair' 'car' 'dining table' 'cup' 'bottle' 'handbag' 'backpack'
+ 'bench' 'bowl']
