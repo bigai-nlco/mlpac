@@ -16,9 +16,39 @@ Traditional supervised learning heavily relies on human-annotated datasets, espe
   + wandb
   + pandas
   + ujson
-  + 
+  
 
 ## Document-Level Relation Extraction Task
+
+### Datasets
+We have put [DocRED](https://github.com/thunlp/DocRED/tree/master/data) and [Re-DocRED](https://github.com/tonytan48/Re-DocRED/tree/main/data) in [data/](https://github.com/bigai-nlco/mlpac/tree/main/dreeam_data_arg_with_ns/data).
+Original datasets can be downloaded following the instructions at the corresponding links. 
+
+### Training
+Perform two-stage training processes: 
+
+1. Pretraining an initiation model by supervised loss;
+2. Load the initiation model then continual training by RL.
+
+**STEP1**, supervised pretraining can refer to the codebase of [DREEAM](https://github.com/YoumiMa/dreeam). Note that we adopt a positive up-weight strategy for training the 10% ratio setting.
+
+**STEP2**, we provide examples of run scripts for RL training, for example, run:
+```
+cd dreeam_data_arg_with_ns
+bash scripts/redoc_ns_final/run_roberta50.sh  ${type} ${lambda} ${seed} ${ns_rate}
+```
+where ``${type}`` is the identifier of this run displayed in wandb, ``${lambda}`` is the scaler that controls the weight of evidence loss, ``${seed}`` is the value of the random seed, and ``${ns_rate}`` is the ratio of negative sampling.
+We provide the relative path of datasets and pre-trained models in the config. You can change the data path and model path for your convenience.
+
+
+### Evaluation
+Make predictions on the enhanced test set with the commands below:
+```
+bash scripts/isf_bert.sh ${name} ${model_dir} ${test_file_path} # for BERT
+bash scripts/isf_roberta.sh ${name} ${model_dir} ${test_file_path} # for RoBERTa
+```
+where ``${model_dir}`` is the directory that contains the checkpoint we are going to evaluate. 
+The program will generate a test file ``result.json`` in the official evaluation format. 
 
 
 ## Multi-Label Image Classification Task
@@ -29,179 +59,74 @@ We leverage the MS-COCO dataset in this task. Data can be found that xxx
 ### Training Models
 Perform two-stage training processes: 
 
-1. Pretraining an initiation model;
+1. Pretraining an initiation model by supervised loss;
 2. Load the initiation model then continual training by RL.
 
+**STEP1**, run:
 
-## Datasets
-
-### Original DocRED and Re-DocRED
-The [DocRED](https://github.com/thunlp/DocRED/tree/master/data) and [Re-DocRED](https://github.com/tonytan48/Re-DocRED/tree/main/data) 
-dataset can be downloaded following the instructions at the corresponding links. 
-
-### DocGNRE
-Our enhanced dataset can be obtained with the following command:
-```commandline
-wget https://bigai-nlco.s3.ap-southeast-1.amazonaws.com/DocGNRE/enhancement_data.zip
 ```
-We provide an enhanced test set (in "enhancement_data/re_docred_test_data_enhancement.json") after manually refining. We also provide four training datasets enhanced by our distant annotations.
-
-
-
-## Automatic Relation Generation
-
-You can run **one command to automatically generate distantly enhanced datasets**.
-```commandline
-bash Automatical_Relation_Generation/run.sh
+python3 train.py \
+        --simulate_partial_type=rps \
+        --simulate_partial_param=0.5 \
+        --partial_loss_mode=negative \
+        --likelihood_topk=5 \
+        --prior_threshold=0.5 \
+        --prior_path=./outputs/priors/prior_fpc_1000.csv \
+        --path_dest=./outputs/neg/rps0.5_posWeight_time1 \
+        --wandb_id=zhangshichuan \
+        --wandb_proj=base_bce_posWeight \
+        --epoch=30 \
+        --pct_start=0.2 \
+        --lr=2e-4 \
+        --weight_decay=1e-5
 ```
 
-### GPT Results as Proposals
+**STEP2**, run:
 
-**STEP1** \
-The ``Automatical_Relation_Generation/I_gpt_proposal.py`` script generates additional triples for each document in the original dataset. \
-This code requires OpenAI's model APIs.  Accessing the API requires an API key, which you can obtain by creating an account and going to the official website. \
-Example to run (``cd Automatical_Relation_Generation``): 
 ```
-python I_gpt_proposal.py -i ${input_file_path} -o ${output_file_path}
+python3 train.py \
+        --data='./coco/'
+        --simulate_partial_type=rps \
+        --simulate_partial_param=0.5 \
+        --path_dest=./outputs/neg/RL_rps0.5_time1_iter_ \
+        --wandb_id=zhangshichuan \
+        --wandb_proj=RL_bce \
+        --best_epoch=14 \
+        --stage=3 \
+        --tunning_mode=pseudo_0.8_0.5_
 ```
-Arguments: 
-  + -i, --input: Path to the input file, such as the train file path of Re-DocRED.
-  + -o, --output: Path to the output file.
 
-The ``Automatical_Relation_Generation/I_gpt_proposal_more.py`` script generates more additional triples through an iterative approach by feeding the previous GPT answers as input.
-
-**STEP2** \
-The ``Automatical_Relation_Generation/II_gpt_triples_postprocess.py`` script filters undesired or illegal triples. \
-Example to run: 
-```
-python II_gpt_triples_postprocess.py -i ${step1_output_file_path} -o ${output_file_path}
-```
-Arguments: 
-  + -i, --input: Path to the input file.
-  + -o, --output: Path to the output file.
-
-
-### NLI as an Annotator
-
-**STEP3** \
-The ``Automatical_Relation_Generation/III_nli_annotator.py`` script calculates the entailment scores used for predefined relation types. \
-Example to run: 
-```
-python III_nli_annotator.py -i ${step2_output_file_path} -o ${output_file_path}
-```
-Arguments: 
-  + -i, --input: Path to the input file.
-  + -o, --output: Path to the output file.
-
-**STEP4** \
-The ``Automatical_Relation_Generation/IV_nli_score_postprocess.py`` script supplements relations according to entailment scores to ensure the high quality of newly added triples. \
-Example to run: 
-```
-python IV_nli_score_postprocess.py -origin ${step1_input_file_path} -i ${step3_output_file_path} -o ${output_file_path}
-```
-Arguments: 
-  + -origin, --origin: Path to the original file.
-  + -i, --input: Path to the input file.
-  + -o, --output: Path to the output file.
+Change the '--data' to your data path, '--simulate_partial_param' is the ratio of unlabeled positive samples, and 'best_epoch' specifies the initiation model to load.
 
 
 
-## DocRE Models
 
-### Training
-The codebase of this repo is extended from [DREEAM](https://github.com/YoumiMa/dreeam). 
-This work mainly designs an automated annotation method, so there is basically no difference between model training and evaluation. 
-Just change the training set file in the ``DocRE/scripts/run_bert_gpt.sh`` and ``DocRE/scripts/run_roberta_gpt.sh`` to complete the training. \
-Run below:
-```
-bash scripts/run_bert_gpt.sh ${name} ${lambda} ${seed} # for BERT
-bash scripts/run_roberta_gpt.sh ${name} ${lambda} ${seed} # for RoBERTa
-```
-where ``${name}`` is the identifier of this run displayed in wandb, 
-``${lambda}`` is the scaler that controls the weight of evidence loss, 
-and ``${seed}`` is the value of random seed.
-
-### Evaluation
-Make predictions on the enhanced test set with the commands below:
-```
-bash DocRE/scripts/isf_bert.sh ${name} ${model_dir} ${test_file_path} # for BERT
-bash DocRE/scripts/isf_roberta.sh ${name} ${model_dir} ${test_file_path} # for RoBERTa
-```
-where ``${model_dir}`` is the directory that contains the checkpoint we are going to evaluate. 
-The program will generate a test file ``result.json`` in the official evaluation format. 
-
-### Data Format
-Generated input example:
-```json
-{
-  "title": "Culrav", 
-  "sents": [
-      ["Culrav", "is", "a", "cultural", "festival", "of", "Motilal", "Nehru", "National", ...], 
-      ["Culrav", "gives", "a", "platform", "to", "the", "students", "of", "MNNIT", ...], 
-      ...],
-  "vertexSet": [
-      [
-        {
-          "sent_id": 0, 
-          "type": "MISC", 
-          "pos": [0, 1], 
-          "name": "Culrav", 
-          "global_pos": [0, 0], 
-          "index": "0_0"
-        }, 
-        {
-          "sent_id": 1, 
-          "type": "MISC", 
-          "pos": [0, 1], 
-          "name": "Culrav", 
-          "global_pos": [15, 15], 
-          "index": "0_1"},
-        ...],
-      ...],
-  "labels": [
-      {
-        "r": "P17",
-        "h": 0, 
-        "t": 3, 
-        "evidence": [0, 1, 3]
-      }, 
-      {
-        "r": "P131",
-        "h": 1, 
-        "t": 2, 
-        "evidence": [0]
-      },
-      ...],
-  "gpt_labels": [
-      {
-        "h": 0,
-        "r": "P127",
-        "t": 1, 
-        "score": 0.758
-      }, 
-      {
-        "h": 0,
-        "r": "P276", 
-        "t": 4, 
-        "score": 0.662
-      },
-      ...]
-}
-```
 
 ## Citation
 ```bibtex
-@inproceedings{docgnre,
-    title = "Semi-automatic Data Enhancement for Document-Level Relation Extraction with Distant Supervision from Large Language Models",
-    author = "Li, Junpeng and Jia, Zixia and Zheng, Zilong",
-    booktitle = "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
-    month = dec,
-    year = "2023",
-    publisher = "Association for Computational Linguistics"
+@inproceedings{jia-etal-2024-combining,
+    title = "Combining Supervised Learning and Reinforcement Learning for Multi-Label Classification Tasks with Partial Labels",
+    author = "Jia, Zixia  and
+      Li, Junpeng  and
+      Zhang, Shichuan  and
+      Liu, Anji  and
+      Zheng, Zilong",
+    editor = "Ku, Lun-Wei  and
+      Martins, Andre  and
+      Srikumar, Vivek",
+    booktitle = "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    month = aug,
+    year = "2024",
+    address = "Bangkok, Thailand",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.acl-long.731",
+    doi = "10.18653/v1/2024.acl-long.731",
+    pages = "13553--13569",
+    abstract = "Traditional supervised learning heavily relies on human-annotated datasets, especially in data-hungry neural approaches. However, various tasks, especially multi-label tasks like document-level relation extraction, pose challenges in fully manual annotation due to the specific domain knowledge and large class sets. Therefore, we address the multi-label positive-unlabelled learning (MLPUL) problem, where only a subset of positive classes is annotated. We propose Mixture Learner for Partially Annotated Classification (MLPAC), an RL-based framework combining the exploration ability of reinforcement learning and the exploitation ability of supervised learning. Experimental results across various tasks, including document-level relation extraction, multi-label image classification, and binary PU learning, demonstrate the generalization and effectiveness of our framework.",
 }
 ```
 
 
 
 ## Acknowledgements
-The codebase of this repo is extended from [DREEAM](https://github.com/YoumiMa/dreeam).
+The codebase of this repo is extended from [DREEAM](https://github.com/YoumiMa/dreeam) and [PartialLabelingCSL](https://github.com/Alibaba-MIIL/PartialLabelingCSL).
