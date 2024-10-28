@@ -1,10 +1,9 @@
 # Mixture Learner for Partially Annotated Classification (MLPAC)
-This repo contains the code for the ACL 2024 paper "Combining Supervised Learning and Reinforcement Learning for Multi-Label Classification Tasks with Partial Labels".
+This repo contains the code for the ACL 2024 paper "[Combining Supervised Learning and Reinforcement Learning for Multi-Label Classification Tasks with Partial Labels]()".
 
 ## Abstract
 Traditional supervised learning heavily relies on human-annotated datasets, especially in data-hungry neural approaches. However, various tasks, especially multi-label tasks like document-level relation extraction, pose challenges in fully manual annotation due to the specific domain knowledge and large class sets. Therefore, we address the multi-label positive unlabelled learning (MLPUL) problem, where only a subset of positive classes is annotated. We propose Mixture Learner for Partially Annotated Classification (MLPAC), an RL-based framework combining the exploration ability of reinforcement learning and the exploitation ability of supervised learning. Experimental results across various tasks, including document-level relation extraction, multi-label image classification, and binary PU learning, demonstrate the generalization and effectiveness of our framework.
 
-![Images](./img/overview.jpg "Trainig process")
 
 ## Requirements
 + Python 3.8
