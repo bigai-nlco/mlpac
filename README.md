@@ -53,7 +53,7 @@ The program will generate a test file ``result.json`` in the official evaluation
 ## Multi-Label Image Classification Task
 
 ### Datasets
-We leverage the MS-COCO dataset in this task. Data can be found that xxx
+We leverage the MS-COCO dataset in this task. 
 
 ### Training Models
 Perform two-stage training processes: 
